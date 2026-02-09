@@ -8,7 +8,7 @@
 ```
 .
 |-- C/
-|   |-- Dynamic Array/
+|   |-- Array/
 |   |-- Stack/
 |   |-- Queue/
 |   |-- Linked List/
@@ -16,7 +16,7 @@
 |   └── Graph/
 |
 |-- C++/
-|   |-- Dynamic Array/
+|   |-- Array/
 |   |-- Stack/
 |   |-- Queue/
 |   |-- Linked List/
@@ -24,7 +24,7 @@
 |   └── Graph/
 |
 |-- Java/
-|   |-- Dynamic Array/
+|   |-- Array/
 |   |-- Stack/
 |   |-- Queue/
 |   |-- Linked List/
@@ -32,7 +32,7 @@
 |   └── Graph/
 |
 |-- Python/
-|   |-- Dynamic Array/
+|   |-- Array/
 |   |-- Stack/
 |   |-- Queue/
 |   |-- Linked List/
@@ -40,7 +40,7 @@
 |   └── Graph/
 |
 |-- JavaScript/
-|   |-- Dynamic Array/
+|   |-- Array/
 |   |-- Stack/
 |   |-- Queue/
 |   |-- Linked List/
