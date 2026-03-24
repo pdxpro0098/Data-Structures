@@ -23,7 +23,7 @@ void printArray(ARRAY *array)
 	}
 }
 
-void push_back(ARRAY *array, int value)
+void insert_back(ARRAY *array, int value)
 {
 	if (array->capacity == array->length)
 	{
@@ -37,7 +37,7 @@ void push_back(ARRAY *array, int value)
 	}
 }
 
-void push_front(ARRAY *array, int value)
+void insert_front(ARRAY *array, int value)
 {
 	if (array->capacity == array->length)
 	{
@@ -54,19 +54,41 @@ void push_front(ARRAY *array, int value)
 	array->length++;
 }
 
+void delete_back(ARRAY *array)
+{
+	if (array->length != 0)
+	{
+		array->length--;
+	}
+}
+
+void delete_front(ARRAY *array)
+{
+	if (array->length != 0)
+	{
+		for (int i = 0; i < array->length; i++)
+		{
+			array->array[i] = array->array[i + 1];
+		}
+		array->length--;
+	}
+}
+
 int main()
 {
 	ARRAY *arr = (ARRAY *)malloc(sizeof(ARRAY));
 	initARRAY(arr);
-	push_front(arr, 1);
-	push_front(arr, 2);
-	push_front(arr, 3);
-	push_front(arr, 4);
-	push_front(arr, 5);
-	push_front(arr, 6);
-	push_front(arr, 7);
-	push_front(arr, 8);
-
+	insert_back(arr, 1);
+	insert_back(arr, 2);
+	insert_back(arr, 3);
+	insert_back(arr, 4);
+	insert_back(arr, 5);
+	insert_back(arr, 6);
+	insert_back(arr, 7);
+	printArray(arr);
+	printf("\n\n");
+	delete_front(arr);
+	delete_front(arr);
 	printArray(arr);
 
 	return 0;
