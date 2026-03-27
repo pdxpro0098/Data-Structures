@@ -79,6 +79,42 @@ void delete_front(ARRAY *array)
 	}
 }
 
+void insert_At(ARRAY *array, int index, int value)
+{
+	if (index > array->length || index < 0)
+	{
+		printf("Insertion Index out of range");
+		return;
+	}
+
+	if (array->capacity == array->length)
+	{
+		array->array = realloc(array->array, sizeof(int) * (array->capacity + 2));
+		array->capacity += 2;
+	}
+	for (int i = array->length; i > index - 1; i--)
+	{
+		array->array[i + 1] = array->array[i];
+	}
+	array->array[index] = value;
+	array->length++;
+}
+
+void delete_At(ARRAY *array, int index)
+{
+	if (index > array->length || index < 0)
+	{
+		printf("Insertion Index out of range");
+		return;
+	}
+
+	for (int i = index; i < array->length; i++)
+	{
+		array->array[i] = array->array[i + 1];
+	}
+	array->length--;
+}
+
 int main()
 {
 	ARRAY *arr = (ARRAY *)malloc(sizeof(ARRAY));
@@ -91,8 +127,6 @@ int main()
 	insert_back(arr, 6);
 	insert_back(arr, 7);
 	insert_back(arr, 8);
-	insert_At(arr, -1, 99);
-
 	print_ARRAY(arr);
 
 	return 0;
