@@ -8,19 +8,24 @@ typedef struct
 	int length;
 } ARRAY;
 
-void initARRAY(ARRAY *array)
+void init_ARRAY(ARRAY *array)
 {
 	array->array = (int *)malloc(sizeof(int) * 2);
 	array->capacity = 2;
 	array->length = 0;
 }
 
-void printArray(ARRAY *array)
+void print_ARRAY(ARRAY *array)
 {
 	for (int i = 0; i < array->length; i++)
 	{
 		printf("%d ", array->array[i]);
 	}
+}
+
+int ARRAY_Size(ARRAY *array)
+{
+	return array->length;
 }
 
 void insert_back(ARRAY *array, int value)
@@ -77,7 +82,7 @@ void delete_front(ARRAY *array)
 int main()
 {
 	ARRAY *arr = (ARRAY *)malloc(sizeof(ARRAY));
-	initARRAY(arr);
+	init_ARRAY(arr);
 	insert_back(arr, 1);
 	insert_back(arr, 2);
 	insert_back(arr, 3);
@@ -85,11 +90,10 @@ int main()
 	insert_back(arr, 5);
 	insert_back(arr, 6);
 	insert_back(arr, 7);
-	printArray(arr);
-	printf("\n\n");
-	delete_front(arr);
-	delete_front(arr);
-	printArray(arr);
+	insert_back(arr, 8);
+	insert_At(arr, -1, 99);
+
+	print_ARRAY(arr);
 
 	return 0;
 }
