@@ -8,14 +8,14 @@ typedef struct
 	int length;
 } ARRAY;
 
-void init_ARRAY(ARRAY *array)
+void ARRAY_init(ARRAY *array)
 {
 	array->array = (int *)malloc(sizeof(int) * 2);
 	array->capacity = 2;
 	array->length = 0;
 }
 
-void print_ARRAY(ARRAY *array)
+void ARRAY_print(ARRAY *array)
 {
 	for (int i = 0; i < array->length; i++)
 	{
@@ -81,7 +81,7 @@ void delete_front(ARRAY *array)
 
 void insert_At(ARRAY *array, int index, int value)
 {
-	if (index >= array->length || index < 0)
+	if (index > array->length || index < 0)
 	{
 		printf("Insertion Index out of range");
 		return;
@@ -115,19 +115,64 @@ void delete_At(ARRAY *array, int index)
 	array->length--;
 }
 
+void ARRAY_reverse(ARRAY *array)
+{
+	for (int i = 0; i < array->length / 2; i++)
+	{
+		int temp = array->array[i];
+		array->array[i] = array->array[array->length - 1 - i];
+		array->array[array->length - 1 - i] = temp;
+	}
+}
+
+void ARRAY_SortASC(ARRAY *array)
+{
+	for (int j = 0; j < array->length; j++)
+	{
+		for (int i = 0; i < array->length - j - 1; i++)
+		{
+			if (array->array[i] > array->array[i + 1])
+			{
+				int temp = array->array[i];
+				array->array[i] = array->array[i + 1];
+				array->array[i + 1] = temp;
+			}
+		}
+	}
+}
+
+void ARRAY_SortDES(ARRAY *array)
+{
+	for (int j = 0; j < array->length; j++)
+	{
+		for (int i = 0; i < array->length - j - 1; i++)
+		{
+			if (array->array[i] < array->array[i + 1])
+			{
+				int temp = array->array[i];
+				array->array[i] = array->array[i + 1];
+				array->array[i + 1] = temp;
+			}
+		}
+	}
+}
+
 int main()
 {
 	ARRAY *arr = (ARRAY *)malloc(sizeof(ARRAY));
-	init_ARRAY(arr);
+	ARRAY_init(arr);
 	insert_back(arr, 1);
-	insert_back(arr, 2);
-	insert_back(arr, 3);
+	insert_back(arr, 20);
+	insert_back(arr, -3);
 	insert_back(arr, 4);
 	insert_back(arr, 5);
-	insert_back(arr, 6);
-	insert_back(arr, 7);
-	insert_back(arr, 8);
-	print_ARRAY(arr);
+	insert_back(arr, 16);
+	insert_back(arr, 73);
+	insert_back(arr, 3);
+
+	// ARRAY_reverse(arr);
+	ARRAY_SortASC(arr);
+	ARRAY_print(arr);
 
 	return 0;
 }
