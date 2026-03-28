@@ -1,0 +1,33 @@
+### Todo
+
+# Implement Various Data Structure in multiple languages  
+  - [ ] C  
+    - [x] Array  
+    - [ ] Linked list
+      - [ ] Singly   
+      - [ ] Doubly   
+      - [ ] Circular   
+      - [ ] Doubly circular   
+    - [ ] Stack  
+      - [ ] Array Stack   
+      - [ ] Linked list Stack   
+    - [ ] Queue
+      - [ ] Array Queue  
+      - [ ] Linked list Queue  
+    - [ ] Tree
+      - [ ] General tree 
+      - [ ] Binary tree 
+      - [ ] Binary Search tree 
+      - [ ] AVL tree 
+      - [ ] B-tree
+    - [ ] Graph
+      - [ ] Adjacency matrix
+      - [ ] Adjacency list
+    - [ ] Heap
+      - [ ] Min Heap 
+      - [ ] Max Heap
+    - [ ] Hash Map
+  - [ ] C++  
+  - [ ] Java  
+  - [ ] Python  
+  - [ ] JavaScript  
