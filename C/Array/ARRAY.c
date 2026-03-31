@@ -7,14 +7,6 @@ void ARRAY_init(ARRAY *array)
 	array->length = 0;
 }
 
-void ARRAY_print(ARRAY *array)
-{
-	for (int i = 0; i < array->length; i++)
-	{
-		printf("%d ", array->array[i]);
-	}
-}
-
 int ARRAY_Size(ARRAY *array)
 {
 	return array->length;
@@ -71,12 +63,11 @@ void delete_front(ARRAY *array)
 	}
 }
 
-void insert_At(ARRAY *array, int index, int value)
+int insert_At(ARRAY *array, int index, int value)
 {
 	if (index > array->length || index < 0)
 	{
-		printf("Insertion Index out of range");
-		return;
+		return 0;
 	}
 
 	if (array->capacity == array->length)
@@ -90,14 +81,14 @@ void insert_At(ARRAY *array, int index, int value)
 	}
 	array->array[index] = value;
 	array->length++;
+	return 1;
 }
 
-void delete_At(ARRAY *array, int index)
+int delete_At(ARRAY *array, int index)
 {
 	if (index >= array->length || index < 0)
 	{
-		printf("Insertion Index out of range");
-		return;
+		return 0;
 	}
 
 	for (int i = index; i < array->length - 1; i++)
@@ -105,4 +96,5 @@ void delete_At(ARRAY *array, int index)
 		array->array[i] = array->array[i + 1];
 	}
 	array->length--;
+	return 1;
 }

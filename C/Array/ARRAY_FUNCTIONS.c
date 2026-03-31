@@ -1,5 +1,15 @@
 #include "ARRAY.h"
 
+void ARRAY_print(ARRAY *array)
+{
+    if (!array)
+        return;
+    for (int i = 0; i < array->length; i++)
+    {
+        printf("%d ", array->array[i]);
+    }
+}
+
 void ARRAY_reverse(ARRAY *array)
 {
     for (int i = 0; i < array->length / 2; i++)
@@ -28,5 +38,4 @@ void ARRAY_SortASC(ARRAY *array)
 
 void ARRAY_SortDES(ARRAY *array)
 {
-   
 }
