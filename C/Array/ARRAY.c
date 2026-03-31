@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "ARRAY.h"
 
 void ARRAY_init(ARRAY *array)
@@ -107,24 +105,4 @@ void delete_At(ARRAY *array, int index)
 		array->array[i] = array->array[i + 1];
 	}
 	array->length--;
-}
-
-int main()
-{
-	ARRAY *arr = (ARRAY *)malloc(sizeof(ARRAY));
-	ARRAY_init(arr);
-	insert_back(arr, 1);
-	insert_back(arr, 20);
-	insert_back(arr, -3);
-	insert_back(arr, 4);
-	insert_back(arr, 5);
-	insert_back(arr, 16);
-	insert_back(arr, 73);
-	insert_back(arr, 3);
-
-	// ARRAY_reverse(arr);
-	ARRAY_SortASC(arr);
-	ARRAY_print(arr);
-
-	return 0;
 }
