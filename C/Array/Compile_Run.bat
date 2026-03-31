@@ -1,2 +1,2 @@
-gcc *.c -o array.exe 
-array.exe
+gcc *.c -o main.exe 
+main.exe
