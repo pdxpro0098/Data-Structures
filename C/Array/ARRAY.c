@@ -98,3 +98,17 @@ int delete_At(ARRAY *array, int index)
 	array->length--;
 	return 1;
 }
+
+void ARRAY_empty(ARRAY *array)
+{
+	for (int i = 0; i < array->length; i++)
+	{
+		array->array[i] = 0;
+	}
+}
+
+void ARRAY_free(ARRAY *array)
+{
+	free(array);
+	array = NULL;
+}

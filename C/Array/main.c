@@ -10,6 +10,6 @@ int main()
     insert_back(arr, 4);
     insert_back(arr, 5);
     ARRAY_print(arr);
-
+    ARRAY_free(arr);
     return 0;
 }
