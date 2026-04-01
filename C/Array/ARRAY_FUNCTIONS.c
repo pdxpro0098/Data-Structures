@@ -39,3 +39,12 @@ void ARRAY_SortASC(ARRAY *array)
 void ARRAY_SortDES(ARRAY *array)
 {
 }
+
+int ARRAY_maximum(ARRAY array)
+{
+    int max = array.array[0];
+    for (int i = 0; i < array.length; i++)
+        if (max < array.array[i])
+            max = array.array[i];
+    return max;
+}
