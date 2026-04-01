@@ -48,3 +48,12 @@ int ARRAY_maximum(ARRAY array)
             max = array.array[i];
     return max;
 }
+
+int minimum(ARRAY array)
+{
+    int min = array.array[0];
+    for (int i = 0; i < array.length; i++)
+        if (min > array.array[i])
+            min = array.array[i];
+    return min;
+}
