@@ -40,20 +40,20 @@ void ARRAY_SortDES(ARRAY *array)
 {
 }
 
-int ARRAY_maximum(ARRAY array)
+int ARRAY_maximum(ARRAY *array)
 {
-    int max = array.array[0];
-    for (int i = 0; i < array.length; i++)
-        if (max < array.array[i])
-            max = array.array[i];
+    int max = array->array[0];
+    for (int i = 0; i < array->length; i++)
+        if (max < array->array[i])
+            max = array->array[i];
     return max;
 }
 
-int minimum(ARRAY array)
+int minimum(ARRAY *array)
 {
-    int min = array.array[0];
-    for (int i = 0; i < array.length; i++)
-        if (min > array.array[i])
-            min = array.array[i];
+    int min = array->array[0];
+    for (int i = 0; i < array->length; i++)
+        if (min > array->array[i])
+            min = array->array[i];
     return min;
 }

@@ -27,3 +27,5 @@ void ARRAY_print(ARRAY *array);
 void ARRAY_reverse(ARRAY *array);
 void ARRAY_SortASC(ARRAY *array);
 void ARRAY_SortDES(ARRAY *array);
+int ARRAY_maximum(ARRAY *array);
+int ARRAY_minimum(ARRAY *array);
