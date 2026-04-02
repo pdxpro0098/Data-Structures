@@ -1,6 +1,6 @@
 #include "ARRAY.h"
 
-void ARRAY_print(ARRAY *array)
+void ARRAY_Print(ARRAY *array)
 {
     if (!array)
         return;
@@ -10,7 +10,7 @@ void ARRAY_print(ARRAY *array)
     }
 }
 
-void ARRAY_reverse(ARRAY *array)
+void ARRAY_Reverse(ARRAY *array)
 {
     for (int i = 0; i < array->length / 2; i++)
     {
@@ -40,7 +40,7 @@ void ARRAY_SortDES(ARRAY *array)
 {
 }
 
-int ARRAY_maximum(ARRAY *array)
+int ARRAY_Maximum(ARRAY *array)
 {
     int max = array->array[0];
     for (int i = 0; i < array->length; i++)
@@ -49,11 +49,27 @@ int ARRAY_maximum(ARRAY *array)
     return max;
 }
 
-int minimum(ARRAY *array)
+int ARRAY_Minimum(ARRAY *array)
 {
     int min = array->array[0];
     for (int i = 0; i < array->length; i++)
         if (min > array->array[i])
             min = array->array[i];
     return min;
+}
+
+int ARRAY_Sum(ARRAY *array)
+{
+    int arraySum = 0;
+    for (int i = 0; i < array->length; i++)
+        arraySum += array->array[i];
+    return arraySum;
+}
+
+int ARRAY_Product(ARRAY *array)
+{
+    int arrayProduct = 1;
+    for (int i = 0; i < array->length; i++)
+        arrayProduct *= array->array[i];
+    return arrayProduct;
 }

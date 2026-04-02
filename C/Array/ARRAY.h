@@ -23,9 +23,9 @@ void ARRAY_empty(ARRAY *array);
 void ARRAY_free(ARRAY *array);
 
 // Prototypes from ARRAY_FUNCTIONS.c
-void ARRAY_print(ARRAY *array);
-void ARRAY_reverse(ARRAY *array);
+void ARRAY_Print(ARRAY *array);
+void ARRAY_Reverse(ARRAY *array);
 void ARRAY_SortASC(ARRAY *array);
 void ARRAY_SortDES(ARRAY *array);
-int ARRAY_maximum(ARRAY *array);
-int ARRAY_minimum(ARRAY *array);
+int ARRAY_Maximum(ARRAY *array);
+int ARRAY_Minimum(ARRAY *array);
