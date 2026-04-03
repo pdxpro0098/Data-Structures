@@ -3,14 +3,14 @@
 # Implement Various Data Structure in multiple languages  
   - [ ] C  
     - [x] Array  
+    - [ ] Stack  
+      - [ ] Array Stack   
+      - [ ] Linked list Stack   
     - [ ] Linked list
       - [ ] Singly   
       - [ ] Doubly   
       - [ ] Circular   
       - [ ] Doubly circular   
-    - [ ] Stack  
-      - [ ] Array Stack   
-      - [ ] Linked list Stack   
     - [ ] Queue
       - [ ] Array Queue  
       - [ ] Linked list Queue  
