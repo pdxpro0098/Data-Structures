@@ -1,24 +1,33 @@
-#include "Queue.h"
+#include "QUEUE.h"
 
-void enqueue(Queue *queue)
+void Queue_init(QUEUE *queue)
+{
+    queue->size = 0;
+    queue->capacity = 2;
+    queue->first = -1;
+    queue->last = -1;
+    queue->array = (int *)malloc(sizeof(int) * (queue->capacity));
+};
+
+void enqueue(QUEUE *queue)
 {
 }
 
-void dequeue(Queue *queue)
+void dequeue(QUEUE *queue)
 {
 }
 
-int front(Queue *queue)
+int front(QUEUE *queue)
 {
-    return 0;
+    return queue->array[queue->first];
 }
 
-int back(Queue *queue)
+int back(QUEUE *queue)
 {
-    return 0;
+    return queue->array[queue->last];
 }
 
-int size(Queue *queue)
+int Queue_Size(QUEUE *queue)
 {
     return queue->size;
 }

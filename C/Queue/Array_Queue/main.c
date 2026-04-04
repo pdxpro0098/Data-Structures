@@ -2,6 +2,7 @@
 
 int main()
 {
-    Queue *q = (Queue *)malloc(sizeof(Queue));
+    QUEUE *q = (QUEUE *)malloc(sizeof(QUEUE));
+
     return 0;
 }

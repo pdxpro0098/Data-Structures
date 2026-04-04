@@ -8,10 +8,11 @@ typedef struct
     int first;
     int last;
     int *array;
-} Queue;
+} QUEUE;
 
-void enqueue(Queue *queue);
-void dequeue(Queue *queue);
-int front(Queue *queue);
-int back(Queue *queue);
-int size(Queue *queue);
+void QUEUE_init(QUEUE *queue); 
+void enqueue(QUEUE *queue);
+void dequeue(QUEUE *queue);
+int front(QUEUE *queue);
+int back(QUEUE *queue);
+int QUEUE_Size(QUEUE *queue);
