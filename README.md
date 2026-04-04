@@ -8,7 +8,11 @@
 ```
 .
 |-- C/
-|   └── Array/
+|   |── Array/
+|   |── Stack/
+|   |   └── Array_Stack/
+|   └── Queue/
+|       └── Queue_Stack/
 |
 └── README.md
 ```
