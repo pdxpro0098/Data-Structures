@@ -13,6 +13,11 @@ int Stack_Size(STACK *stack)
     return stack->size;
 }
 
+int isEmpty(STACK *stack)
+{
+    return Stack_Size(stack) == 0;
+}
+
 void push(STACK *stack, int value)
 {
     if (!stack)
@@ -46,7 +51,7 @@ int pop(STACK *stack)
     }
 }
 
-int peek(STACK *stack)
+int top(STACK *stack)
 {
     if (stack->top == -1)
     {

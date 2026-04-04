@@ -13,5 +13,6 @@ typedef struct
 void Stack_init(STACK *stack);
 void push(STACK *stack, int value);
 int pop(STACK *stack);
-int peek(STACK *stack);
+int top(STACK *stack);
 int Stack_Size(STACK *stack);
+int isEmpty(STACK *stack);
