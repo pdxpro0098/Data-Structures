@@ -20,7 +20,7 @@ void push(STACK *stack, int value)
 
     if (stack->size == stack->capacity)
     {
-        stack->array = (int *)realloc(stack->array, sizeof(int) * stack->capacity + 2);
+        stack->array = (int *)realloc(stack->array, sizeof(int) * (stack->capacity + 2));
         stack->capacity += 2;
     }
 
@@ -30,21 +30,23 @@ void push(STACK *stack, int value)
     stack->array[stack->top] = value;
 }
 
-void pop(STACK *stack)
+int pop(STACK *stack)
 {
-
     if (stack->top > -1)
     {
+        int val = stack->array[stack->top];
         stack->top--;
         stack->size--;
+        return val;
     }
     else
     {
-        printf("Stack is empty");
+        printf("Stack is empty\n");
+        return -1;
     }
 }
 
-int top(STACK *stack)
+int peek(STACK *stack)
 {
     if (stack->top == -1)
     {
