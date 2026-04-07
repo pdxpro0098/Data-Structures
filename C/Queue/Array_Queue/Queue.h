@@ -11,10 +11,9 @@ typedef struct
 } QUEUE;
 
 void Queue_init(QUEUE *queue);
+int Queue_Size(QUEUE *queue);
 void enqueue(QUEUE *queue, int value);
 void dequeue(QUEUE *queue);
 int front(QUEUE *queue);
-int back(QUEUE *queue);
-int Queue_Size(QUEUE *queue);
 int isFull(QUEUE *queue);
 int isEmpty(QUEUE *queue);
