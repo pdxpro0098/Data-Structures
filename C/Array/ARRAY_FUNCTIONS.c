@@ -38,6 +38,18 @@ void ARRAY_SortASC(ARRAY *array)
 
 void ARRAY_SortDES(ARRAY *array)
 {
+    for (int j = 0; j < array->length; j++)
+    {
+        for (int i = 0; i < array->length - j - 1; i++)
+        {
+            if (array->array[i] < array->array[i + 1])
+            {
+                int temp = array->array[i];
+                array->array[i] = array->array[i + 1];
+                array->array[i + 1] = temp;
+            }
+        }
+    }
 }
 
 int ARRAY_Maximum(ARRAY *array)
