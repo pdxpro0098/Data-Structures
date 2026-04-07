@@ -17,3 +17,4 @@ void dequeue(QUEUE *queue);
 int front(QUEUE *queue);
 int isFull(QUEUE *queue);
 int isEmpty(QUEUE *queue);
+void Queue_free(QUEUE *queue);

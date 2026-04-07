@@ -16,3 +16,4 @@ int pop(STACK *stack);
 int top(STACK *stack);
 int Stack_Size(STACK *stack);
 int isEmpty(STACK *stack);
+void Stack_free(STACK *stack);

@@ -86,3 +86,9 @@ int isEmpty(QUEUE *queue)
 {
     return queue->size == 0;
 }
+
+void Queue_free(QUEUE *queue)
+{
+    free(queue->array);
+    free(queue);
+}

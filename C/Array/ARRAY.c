@@ -109,6 +109,6 @@ void ARRAY_empty(ARRAY *array)
 
 void ARRAY_free(ARRAY *array)
 {
+	free(array->array);
 	free(array);
-	array = NULL;
 }

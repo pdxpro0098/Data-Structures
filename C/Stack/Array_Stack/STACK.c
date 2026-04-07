@@ -60,3 +60,9 @@ int top(STACK *stack)
 
     return stack->array[stack->top];
 }
+
+void Stack_free(STACK *stack)
+{
+    free(stack->array);
+    free(stack);
+}
