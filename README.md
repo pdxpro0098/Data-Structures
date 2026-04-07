@@ -12,7 +12,7 @@
 |   |── Stack/
 |   |   └── Array_Stack/
 |   └── Queue/
-|       └── Queue_Stack/
+|       └── Array_Queue/
 |
 └── README.md
 ```
