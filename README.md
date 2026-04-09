@@ -10,9 +10,11 @@
 |-- C/
 |   |── Array/
 |   |── Stack/
-|   |   └── Array_Stack/
+|   |   └── Array Stack/
 |   └── Queue/
-|       └── Array_Queue/
+|   |   └── Array Queue/
+|   └── Linked List/
+|       └── Singly Linked List/
 |
 └── README.md
 ```
