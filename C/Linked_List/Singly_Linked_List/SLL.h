@@ -17,5 +17,6 @@ void insertHead(List *list, int value);
 void deleteHead(List *list);
 void insertTail(List *list, int value);
 void deleteTail(List *list);
-void insertAt(List* list);
-void deleteAt(List* list);
+void insertAt(List *list, int index, int value);
+void deleteAt(List *list, int index);
+int List_size(List *list);
