@@ -10,7 +10,7 @@
       - [x] Array Queue  
       - [ ] Linked list Queue  
     - [x] Linked list
-      - [ ] Singly   
+      - [x] Singly   
       - [ ] Doubly   
       - [ ] Circular   
       - [ ] Doubly circular   
