@@ -44,7 +44,7 @@ void insertTail(List *list, int value)
     Node *newNode = createNode(value);
 
     if (list->listHead == NULL)
-        list->listHead = createNode(value);
+        list->listHead = newNode;
 
     Node *temp = list->listHead;
 
@@ -85,11 +85,17 @@ void deleteTail(List *list)
 
 void insertAt(List *list, int index, int value)
 {
-    if (list->listHead == NULL || index == 0)
+    if (list->listHead == NULL || index <= 0)
+    {
         insertHead(list, value);
+        return;
+    }
 
     if (index >= list->size)
+    {
         insertTail(list, value);
+        return;
+    }
 
     Node *temp = list->listHead;
     for (int i = 0; i < index - 1; i++)
@@ -101,8 +107,34 @@ void insertAt(List *list, int index, int value)
     newNode->next = temp->next;
 
     temp->next = newNode;
+    list->size++;
 }
 
 void deleteAt(List *list, int index)
 {
+    if (list->listHead == NULL)
+        return;
+
+    if (index <= 0)
+    {
+        deleteHead(list);
+        return;
+    }
+
+    if (index >= list->size - 1)
+    {
+        deleteTail(list);
+        return;
+    }
+
+    Node *temp = list->listHead;
+    for (int i = 0; i < index - 1; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *toDelete = temp->next;
+    temp->next = toDelete->next;
+    free(toDelete);
+    list->size--;
 }

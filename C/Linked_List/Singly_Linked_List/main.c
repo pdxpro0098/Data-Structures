@@ -13,7 +13,7 @@ int main()
     insertHead(lst, 5);
     insertHead(lst, 6);
     insertHead(lst, 7);
-        
+    insertAt(lst, 3, 99);
     printList(lst);
     return 0;
 }
