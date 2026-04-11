@@ -10,8 +10,8 @@ typedef struct Node
 typedef struct DList
 {
     int size;
-    Node *listHead;
-    Node *listTail;
+    Node *head;
+    Node *tail;
 } DList;
 
 void DList_init(DList *list);

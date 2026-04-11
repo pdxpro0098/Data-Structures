@@ -16,7 +16,7 @@
 
 void printList(DList *list)
 {
-    Node *temp = list->listHead;
+    Node *temp = list->head;
 
     while (temp != NULL)
     {
@@ -28,7 +28,7 @@ void printList(DList *list)
 
 void printListReverse(DList *list)
 {
-    Node *temp = list->listTail;
+    Node *temp = list->tail;
     while (temp != NULL)
     {
         printf("%d->", temp->data);

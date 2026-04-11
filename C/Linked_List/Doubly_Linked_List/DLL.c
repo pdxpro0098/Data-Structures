@@ -3,8 +3,8 @@
 void DList_init(DList *list)
 {
     list->size = 0;
-    list->listHead = NULL;
-    list->listTail = NULL;
+    list->head = NULL;
+    list->tail = NULL;
 }
 
 Node *createNode(int value)
@@ -25,16 +25,16 @@ void insertHead(DList *list, int value)
 {
     Node *newNode = createNode(value);
 
-    if (list->listHead == NULL)
+    if (list->head == NULL)
     {
-        list->listHead = newNode;
-        list->listTail = newNode;
+        list->head = newNode;
+        list->tail = newNode;
     }
     else
     {
-        newNode->next = list->listHead;
-        list->listHead->prev = newNode;
-        list->listHead = newNode;
+        newNode->next = list->head;
+        list->head->prev = newNode;
+        list->head = newNode;
     }
 
     list->size++;
@@ -42,24 +42,59 @@ void insertHead(DList *list, int value)
 
 void deleteHead(DList *list)
 {
-    if (list->listHead->next == NULL)
+    if (list->head == NULL)
     {
-        free(list->listHead);
-        list->listHead = NULL;
+        return;
     }
 
-    Node *temp = list->listHead;
-    list->listHead = list->listHead->next;
+    if (list->head->next == NULL)
+    {
+        free(list->head);
+        list->head = NULL;
+        return;
+    }
+
+    Node *temp = list->head;
+    list->head = list->head->next;
+    list->head->prev = NULL;
     free(temp);
     list->size--;
 }
 
 void insertTail(DList *list, int value)
 {
+    Node *newNode = createNode(value);
+    if (list->tail == NULL)
+    {
+        list->head = newNode;
+        list->tail = newNode;
+    }
+    else
+    {
+        newNode->prev = list->tail;
+        list->tail->next = newNode;
+        list->tail = newNode;
+    }
+    list->size++;
 }
 
 void deleteTail(DList *list)
 {
+    if (list->tail == NULL)
+        return;
+
+    if (list->tail->prev == NULL)
+    {
+        free(list->tail);
+        list->tail = NULL;
+        return;
+    }
+
+    Node *temp = list->tail;
+    list->tail = list->tail->prev;
+    list->tail->next = NULL;
+    free(temp);
+    list->size--;
 }
 
 void insertAt(DList *list, int index, int value)
