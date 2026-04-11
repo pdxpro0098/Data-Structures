@@ -9,7 +9,7 @@ typedef struct Node
 typedef struct List
 {
     int size;
-    Node *listHead;
+    Node *head;
 } List;
 
 void List_init(List *list);

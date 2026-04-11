@@ -12,7 +12,7 @@ Node *createNode(int value)
 void List_init(List *list)
 {
     list->size = 0;
-    list->listHead = NULL;
+    list->head = NULL;
 }
 
 int List_size(List *list)
@@ -23,18 +23,18 @@ int List_size(List *list)
 void insertHead(List *list, int value)
 {
     Node *newNode = createNode(value);
-    newNode->next = list->listHead;
-    list->listHead = newNode;
+    newNode->next = list->head;
+    list->head = newNode;
     list->size++;
 }
 
 void deleteHead(List *list)
 {
-    if (list->listHead == NULL)
+    if (list->head == NULL)
         return;
 
-    Node *temp = list->listHead;
-    list->listHead = list->listHead->next;
+    Node *temp = list->head;
+    list->head = list->head->next;
     free(temp);
     list->size--;
 }
@@ -43,10 +43,10 @@ void insertTail(List *list, int value)
 {
     Node *newNode = createNode(value);
 
-    if (list->listHead == NULL)
-        list->listHead = newNode;
+    if (list->head == NULL)
+        list->head = newNode;
 
-    Node *temp = list->listHead;
+    Node *temp = list->head;
 
     while (temp->next != NULL)
     {
@@ -58,17 +58,17 @@ void insertTail(List *list, int value)
 
 void deleteTail(List *list)
 {
-    if (list->listHead == NULL)
+    if (list->head == NULL)
     {
         return;
     }
 
-    Node *temp = list->listHead;
+    Node *temp = list->head;
 
     if (temp->next == NULL)
     {
         free(temp);
-        list->listHead = NULL;
+        list->head = NULL;
         list->size--;
         return;
     }
@@ -85,7 +85,7 @@ void deleteTail(List *list)
 
 void insertAt(List *list, int index, int value)
 {
-    if (list->listHead == NULL || index <= 0)
+    if (list->head == NULL || index <= 0)
     {
         insertHead(list, value);
         return;
@@ -97,7 +97,7 @@ void insertAt(List *list, int index, int value)
         return;
     }
 
-    Node *temp = list->listHead;
+    Node *temp = list->head;
     for (int i = 0; i < index - 1; i++)
     {
         temp = temp->next;
@@ -112,7 +112,7 @@ void insertAt(List *list, int index, int value)
 
 void deleteAt(List *list, int index)
 {
-    if (list->listHead == NULL)
+    if (list->head == NULL)
         return;
 
     if (index <= 0)
@@ -127,7 +127,7 @@ void deleteAt(List *list, int index)
         return;
     }
 
-    Node *temp = list->listHead;
+    Node *temp = list->head;
     for (int i = 0; i < index - 1; i++)
     {
         temp = temp->next;
