@@ -36,7 +36,6 @@ void insertHead(DList *list, int value)
         list->head->prev = newNode;
         list->head = newNode;
     }
-
     list->size++;
 }
 
@@ -51,6 +50,7 @@ void deleteHead(DList *list)
     {
         free(list->head);
         list->head = NULL;
+        return;
     }
 
     Node *temp = list->head;
@@ -79,12 +79,68 @@ void insertTail(DList *list, int value)
 
 void deleteTail(DList *list)
 {
+    if (list->tail == NULL)
+        return;
+    if (list->tail->prev == NULL)
+    {
+        free(list->tail);
+        list->tail = NULL;
+        return;
+    }
+    Node *temp = list->tail;
+    list->tail = list->tail->prev;
+    list->tail->next = NULL;
+    free(temp);
+    list->size--;
 }
 
 void insertAt(DList *list, int index, int value)
 {
+    if (list->head == NULL)
+        return;
+    if (index <= 0)
+    {
+        insertHead(list, value);
+        return;
+    }
+    if (index >= list->size)
+    {
+        insertTail(list, value);
+        return;
+    }
+    Node *newNode = createNode(value);
+    Node *temp = list->head;
+    for (int i = 0; i < index; i++)
+    {
+        temp = temp->next;
+    }
+    newNode->prev = temp->prev;
+    newNode->next = temp;
+    temp->prev->next = newNode;
+    temp->prev = newNode;
+    list->size++;
 }
 
 void deleteAt(DList *list, int index)
 {
+    if (list->head == NULL)
+        return;
+    if (index <= 0)
+    {
+        deleteHead(list);
+        return;
+    }
+    if (index >= list->size)
+    {
+        deleteTail(list);
+        return;
+    }
+    Node *temp = list->head;
+    for (int i = 0; i < index; i++)
+    {
+        temp = temp->next;
+    }
+    temp->prev->next = temp->next;
+    temp->next->prev = temp->prev;
+    list->size--;
 }
