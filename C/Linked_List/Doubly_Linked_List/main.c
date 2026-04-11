@@ -6,18 +6,17 @@ int main()
 {
     DList *lst = (DList *)malloc(sizeof(DList));
     DList_init(lst);
-    insertHead(lst, 1);
-    insertHead(lst, 2);
-    insertHead(lst, 3);
-    insertHead(lst, 4);
-    insertHead(lst, 5);
-    insertHead(lst, 6);
-    insertHead(lst, 7);
-    insertHead(lst, 8);
-    insertHead(lst, 9);
-    deleteHead(lst);
+    insertTail(lst, 1);
+    insertTail(lst, 2);
+    insertTail(lst, 3);
+    insertTail(lst, 4);
+    insertTail(lst, 5);
+    insertTail(lst, 6);
+    insertTail(lst, 7);
+    insertTail(lst, 8);
+    insertTail(lst, 9);
     // deleteHead(lst);
-    // printListReverse(lst);
-    printList(lst);
+    printListReverse(lst);
+    // printList(lst);
     return 0;
 }

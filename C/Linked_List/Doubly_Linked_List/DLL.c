@@ -51,9 +51,6 @@ void deleteHead(DList *list)
     {
         free(list->head);
         list->head = NULL;
-        list->tail = NULL;
-        list->size--;
-        return;
     }
 
     Node *temp = list->head;
@@ -82,22 +79,12 @@ void insertTail(DList *list, int value)
 
 void deleteTail(DList *list)
 {
-    if (list->tail == NULL)
-        return;
-
-    if (list->tail->prev == NULL)
-    {
-        free(list->tail);
-        list->tail = NULL;
-        list->head = NULL;
-        list->size--;
-        return;
-    }
-
-    Node *temp = list->tail;
-    list->tail = list->tail->prev;
-    list->tail->next = NULL;
-    free(temp);
-    list->size--;
 }
 
+void insertAt(DList *list, int index, int value)
+{
+}
+
+void deleteAt(DList *list, int index)
+{
+}
