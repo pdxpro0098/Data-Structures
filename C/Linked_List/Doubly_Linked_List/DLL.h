@@ -11,6 +11,7 @@ typedef struct DList
 {
     int size;
     Node *listHead;
+    Node *listTail;
 } DList;
 
 void DList_init(DList *list);
