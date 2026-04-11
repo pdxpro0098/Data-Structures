@@ -2,6 +2,17 @@
 
 void DList_init(DList *list)
 {
+    list->size = 0;
+    list->listHead = NULL;
+}
+
+Node *createNode(int value)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->prev = NULL;
+    newNode->data = value;
+    return newNode;
 }
 
 void insertHead(DList *list, int value)

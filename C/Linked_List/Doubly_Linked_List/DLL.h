@@ -14,6 +14,7 @@ typedef struct DList
 } DList;
 
 void DList_init(DList *list);
+Node *createNode(int value);
 void insertHead(DList *list, int value);
 void deleteHead(DList *list);
 void insertTail(DList *list, int value);

@@ -15,6 +15,7 @@
 |   |   └── Array Queue/
 |   └── Linked List/
 |       └── Singly Linked List/
+|       └── Doubly Linked List/
 |
 └── README.md
 ```
