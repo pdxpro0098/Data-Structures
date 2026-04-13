@@ -1,5 +1,4 @@
 #include "SLL.h"
-#include "../LL_Function.c"
 #include <stdio.h>
 
 int main()

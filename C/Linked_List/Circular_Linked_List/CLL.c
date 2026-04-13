@@ -114,10 +114,58 @@ void deleteTail(CList *list)
 
 void insertAt(CList *list, int index, int value)
 {
+    if (index <= 0 || list->head == NULL)
+    {
+        insertHead(list, value);
+        return;
+    }
+
+    if (index >= list->size)
+    {
+        insertTail(list, value);
+        return;
+    }
+
+    Node *temp = list->head;
+    for (int i = 0; i < index - 1; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *newNode = createNode(value);
+    newNode->next = temp->next;
+
+    temp->next = newNode;
+    list->size++;
 }
 
 void deleteAt(CList *list, int index)
 {
+    if (list->head == NULL)
+        return;
+
+    if (index <= 0)
+    {
+        deleteHead(list);
+        return;
+    }
+
+    if (index >= list->size - 1)
+    {
+        deleteTail(list);
+        return;
+    }
+
+    Node *temp = list->head;
+    for (int i = 0; i < index - 1; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *toDelete = temp->next;
+    temp->next = toDelete->next;
+    free(toDelete);
+    list->size--;
 }
 
 void printCList(CList *list)
