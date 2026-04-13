@@ -44,6 +44,27 @@ void insertHead(CList *list, int value)
 
 void deleteHead(CList *list)
 {
+    if (list->head == NULL)
+        return;
+
+    if (list->head->next == list->head)
+    {
+        free(list->head);
+        list->head = NULL;
+        list->size--;
+        return;
+    }
+
+    Node *temp = list->head;
+    while (temp->next != list->head)
+    {
+        temp = temp->next;
+    }
+    Node *toDelete = temp->next;
+    list->head = list->head->next;
+    temp->next = list->head;
+    free(toDelete);
+    list->size--;
 }
 
 void insertTail(CList *list, int value)
@@ -69,6 +90,26 @@ void insertTail(CList *list, int value)
 
 void deleteTail(CList *list)
 {
+    if (list->head == NULL)
+        return;
+
+    if (list->head->next == list->head)
+    {
+        free(list->head);
+        list->head = NULL;
+        list->size--;
+        return;
+    }
+
+    Node *temp = list->head;
+    while (temp->next->next != list->head)
+    {
+        temp = temp->next;
+    }
+
+    free(temp->next);
+    temp->next = list->head;
+    list->size--;
 }
 
 void insertAt(CList *list, int index, int value)

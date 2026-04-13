@@ -6,11 +6,10 @@ int main()
 
     CList_init(lst);
     insertHead(lst, 1);
-    insertHead(lst, 2);
-    insertHead(lst, 3);
-    insertHead(lst, 4);
-    insertHead(lst, 5);
-    insertTail(lst, 99);
+    insertHead(lst, 11);
+    insertHead(lst, 111);
+    insertHead(lst, 1111);
+    deleteHead(lst);
     printCList(lst);
 
     return 0;
