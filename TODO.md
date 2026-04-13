@@ -11,7 +11,7 @@
       - [ ] Linked list Queue  
     - [x] Linked list
       - [x] Singly   
-      - [ ] Doubly   
+      - [x] Doubly   
       - [ ] Circular   
       - [ ] Doubly circular   
     - [ ] Tree
@@ -28,12 +28,12 @@
       - [ ] Max Heap
     - [ ] Hash Map
   - [ ] C++  
-    - [x] Array  
+    - [ ] Array  
       - [] Stack  
-        - [x] Array Stack   
+        - [ ] Array Stack   
         - [ ] Linked list Stack   
       - [ ] Queue
-        - [x] Array Queue  
+        - [ ] Array Queue  
         - [ ] Linked list Queue  
       - [ ] Linked list
         - [ ] Singly   
