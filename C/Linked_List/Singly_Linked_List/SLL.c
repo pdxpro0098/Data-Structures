@@ -138,3 +138,15 @@ void deleteAt(List *list, int index)
     free(toDelete);
     list->size--;
 }
+
+void printList(List *list)
+{
+    Node *temp = list->head;
+
+    while (temp != NULL)
+    {
+        printf("%d->", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL");
+}

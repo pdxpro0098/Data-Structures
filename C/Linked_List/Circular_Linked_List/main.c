@@ -1,5 +1,4 @@
 #include "CLL.h"
-#include "../LL_Function.c"
 
 int main()
 {

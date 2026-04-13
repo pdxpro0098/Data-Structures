@@ -23,3 +23,5 @@ void insertTail(DList *list, int value);
 void deleteTail(DList *list);
 void insertAt(DList *list, int index, int value);
 void deleteAt(DList *list, int index);
+void printDList(DList *list);
+void printDListReverse(DList *list);

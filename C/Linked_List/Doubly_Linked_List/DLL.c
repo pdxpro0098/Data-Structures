@@ -144,3 +144,25 @@ void deleteAt(DList *list, int index)
     temp->next->prev = temp->prev;
     list->size--;
 }
+
+void printDList(DList *list)
+{
+    Node *temp = list->head;
+    for (int i = 0; i < list->size; i++)
+    {
+        printf("%d->", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL");
+}
+
+void printDListReverse(DList *list)
+{
+    Node *temp = list->tail;
+while (temp != NULL)
+    {
+        printf("%d->", temp->data);
+        temp = temp->prev;
+    }
+    printf("NULL");
+}

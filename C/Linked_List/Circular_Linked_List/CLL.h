@@ -21,3 +21,4 @@ void insertTail(CList *list, int value);
 void deleteTail(CList *list);
 void insertAt(CList *list, int index, int value);
 void deleteAt(CList *list, int index);
+void printCList(CList *list);

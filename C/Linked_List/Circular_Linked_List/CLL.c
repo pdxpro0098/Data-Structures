@@ -78,3 +78,15 @@ void insertAt(CList *list, int index, int value)
 void deleteAt(CList *list, int index)
 {
 }
+
+void printCList(CList *list)
+{
+    Node *temp = list->head;
+
+    do
+    {
+        printf("%d->", temp->data);
+        temp = temp->next;
+    } while (temp != list->head);
+    printf("NULL");
+}
