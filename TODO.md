@@ -12,7 +12,7 @@
     - [x] Linked list
       - [x] Singly   
       - [x] Doubly   
-      - [ ] Circular   
+      - [x] Circular   
       - [ ] Doubly circular   
     - [ ] Tree
       - [ ] General tree 
