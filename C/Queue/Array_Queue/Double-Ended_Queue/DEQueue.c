@@ -67,10 +67,47 @@ void enqueueRear(DEQueue *queue, int value)
 
 int dequeueFront(DEQueue *queue)
 {
-    return 0;
+    if (isEmpty(queue))
+    {
+        printf("Queue is Empty\n");
+        return -1;
+    }
+
+    int value = queue->array[queue->front];
+    if (queue->front == queue->rear)
+    {
+        queue->front = -1;
+        queue->rear = -1;
+    }
+    else
+    {
+        queue->front++;
+    }
+
+    queue->size--;
+    return value;
 }
 
 int dequeueRear(DEQueue *queue)
 {
-    return 0;
+    if (isEmpty(queue))
+    {
+        printf("Queue is Empty\n");
+        return -1;
+    }
+
+    int value = queue->array[queue->rear];
+    if (queue->front == queue->rear)
+    {
+        queue->front = -1;
+        queue->rear = -1;
+    }
+    else
+    {
+        queue->rear--;
+    }
+
+    queue->rear--;
+    queue->size--;
+    return value;
 }
