@@ -1,4 +1,4 @@
-#include "Queue.h"
+#include "LQueue.h"
 
 void Queue_init(Queue *queue, int maxSize)
 {

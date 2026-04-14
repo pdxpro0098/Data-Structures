@@ -1,4 +1,4 @@
-#include "Queue.h"
+#include "LQueue.h"
 
 int main()
 {
