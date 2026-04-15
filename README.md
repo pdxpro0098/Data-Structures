@@ -7,15 +7,23 @@
 
 ```
 .
-|-- C/
-|   |── Array/
-|   |── Stack/
-|   |   └── Array Stack/
-|   └── Queue/
-|   |   └── Array Queue/
-|   └── Linked List/
-|       └── Singly Linked List/
-|       └── Doubly Linked List/
-|
-└── README.md
+├── C/
+│   ├── Array/
+│   │
+│   ├── Stack/
+│   │   └── Array Stack/
+│   │
+│   ├── Queue/
+│   │   └── Array Queue/
+│   │       └── Linear Queue/
+│   │       └── Circular Queue/
+│   │       └── Double Ended Queue/
+│   │       
+│   └── Linked List/
+│       └── Singly Linked List/
+│       └── Doubly Linked List/
+│       └── Circular Linked List/
+│
+├── README.md
+└── Todo.md
 ```

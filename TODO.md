@@ -8,6 +8,10 @@
       - [ ] Linked list Stack   
     - [ ] Queue
       - [x] Array Queue  
+        - [x] Circular Queue  
+        - [x] Double Ended Queue - Working
+        - [x] Linear Queue
+        - [ ] Priority Queue
       - [ ] Linked list Queue  
     - [x] Linked list
       - [x] Singly   
@@ -28,31 +32,6 @@
       - [ ] Max Heap
     - [ ] Hash Map
   - [ ] C++  
-    - [ ] Array  
-      - [] Stack  
-        - [ ] Array Stack   
-        - [ ] Linked list Stack   
-      - [ ] Queue
-        - [ ] Array Queue  
-        - [ ] Linked list Queue  
-      - [ ] Linked list
-        - [ ] Singly   
-        - [ ] Doubly   
-        - [ ] Circular   
-        - [ ] Doubly circular   
-      - [ ] Tree
-        - [ ] General tree 
-        - [ ] Binary tree 
-        - [ ] Binary Search tree 
-        - [ ] AVL tree 
-        - [ ] B-tree
-      - [ ] Graph
-        - [ ] Adjacency matrix
-        - [ ] Adjacency list
-      - [ ] Heap
-        - [ ] Min Heap 
-        - [ ] Max Heap
-      - [ ] Hash Map
   - [ ] Java  
   - [ ] Python  
   - [ ] JavaScript  

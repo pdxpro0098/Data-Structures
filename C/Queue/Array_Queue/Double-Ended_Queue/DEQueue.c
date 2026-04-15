@@ -44,6 +44,7 @@ void enqueueFront(DEQueue *queue, int value)
     queue->array[queue->front] = value;
     queue->size++;
 }
+
 void enqueueRear(DEQueue *queue, int value)
 {
     if (isFull(queue) || queue->rear == queue->capacity - 1)
@@ -107,7 +108,6 @@ int dequeueRear(DEQueue *queue)
         queue->rear--;
     }
 
-    queue->rear--;
     queue->size--;
     return value;
 }
