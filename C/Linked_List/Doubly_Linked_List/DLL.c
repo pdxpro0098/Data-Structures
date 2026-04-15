@@ -159,7 +159,7 @@ void printDList(DList *list)
 void printDListReverse(DList *list)
 {
     Node *temp = list->tail;
-while (temp != NULL)
+    while (temp != NULL)
     {
         printf("%d->", temp->data);
         temp = temp->prev;
