@@ -17,7 +17,7 @@
       - [x] Singly   
       - [x] Doubly   
       - [x] Circular   
-      - [ ] Doubly circular   
+      - [x] Doubly circular   
     - [ ] Tree
       - [ ] General tree 
       - [ ] Binary tree 

@@ -3,8 +3,8 @@
 void DCLL_init(DCLL *list)
 {
     list->size = 0;
-    list->head = (Node *)malloc(sizeof(Node));
-    list->tail = (Node *)malloc(sizeof(Node));
+    list->head = NULL;
+    list->tail = NULL;
 }
 
 int DCLL_size(DCLL *list)
@@ -23,10 +23,48 @@ Node *createNode(int value)
 
 void insertHead(DCLL *list, int value)
 {
+    Node *newNode = createNode(value);
+    if (list->head == NULL)
+    {
+        list->head = newNode;
+        list->tail = newNode;
+        newNode->next = list->head;
+        newNode->prev = list->head;
+    }
+    else
+    {
+        newNode->next = list->head;
+        newNode->prev = list->tail;
+
+        list->head->prev = newNode;
+        list->tail->next = newNode;
+
+        list->head = newNode;
+    }
+    list->size++;
 }
 
 void insertTail(DCLL *list, int value)
 {
+    Node *newNode = createNode(value);
+    if (list->head == NULL)
+    {
+        list->head = newNode;
+        list->tail = newNode;
+        newNode->next = list->head;
+        newNode->prev = list->head;
+    }
+    else
+    {
+        newNode->next = list->head;
+        newNode->prev = list->tail;
+
+        list->head->prev = newNode;
+        list->tail->next = newNode;
+
+        list->tail = newNode;
+    }
+    list->size++;
 }
 
 void deleteHead(DCLL *list)
