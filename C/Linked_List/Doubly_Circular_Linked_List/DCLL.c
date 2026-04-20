@@ -69,10 +69,46 @@ void insertTail(DCLL *list, int value)
 
 void deleteHead(DCLL *list)
 {
+    if (list->head == NULL)
+        return;
+
+    Node *toDelete = list->head;
+    if (list->head->next == list->head)
+    {
+        free(toDelete);
+        list->head = NULL;
+        list->tail = NULL;
+    }
+    else
+    {
+        list->head = list->head->next;
+        list->head->prev = list->tail;
+        list->tail->next = list->head;
+        free(toDelete);
+    }
+    list->size--;
 }
 
 void deleteTail(DCLL *list)
 {
+    if (list->tail == NULL)
+        return;
+
+    Node *toDelete = list->tail;
+    if (list->head == list->tail)
+    {
+        free(toDelete);
+        list->head = NULL;
+        list->tail = NULL;
+    }
+    else
+    {
+        list->tail = list->tail->prev;
+        list->tail->next = list->head;
+        list->head->prev = list->tail;
+        free(toDelete);
+    }
+    list->size--;
 }
 
 void insertAt(DCLL *list, int index, int value)
