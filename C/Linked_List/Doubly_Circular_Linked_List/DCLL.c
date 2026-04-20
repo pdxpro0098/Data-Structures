@@ -113,10 +113,53 @@ void deleteTail(DCLL *list)
 
 void insertAt(DCLL *list, int index, int value)
 {
+    if (index <= 0)
+    {
+        insertHead(list, value);
+    }
+    else if (index >= list->size)
+    {
+        insertTail(list, value);
+    }
+    else
+    {
+        Node *temp = list->head;
+        for (int i = 0; i < index; i++)
+        {
+            temp = temp->next;
+        }
+        Node *newNode = createNode(value);
+        newNode->next = temp;
+        newNode->prev = temp->prev;
+        temp->prev->next = newNode;
+        temp->prev = newNode;
+        list->size++;
+    }
 }
 
 void deleteAt(DCLL *list, int index)
 {
+
+    if (index == 0)
+    {
+        deleteHead(list);
+    }
+    else if (index == list->size - 1)
+    {
+        deleteTail(list);
+    }
+    else
+    {
+        Node *toDelete = list->head;
+        for (int i = 0; i < index; i++)
+        {
+            toDelete = toDelete->next;
+        }
+        toDelete->prev->next = toDelete->next;
+        toDelete->next->prev = toDelete->prev;
+        free(toDelete);
+        list->size--;
+    }
 }
 
 void printDCList(DCLL *list)
