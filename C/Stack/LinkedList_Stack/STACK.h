@@ -13,8 +13,8 @@ typedef struct
     Node *top;
 } STACK;
 
-void Stack_init(STACK *stack);
-int Stack_Size(STACK *stack);
+void STACK_init(STACK *stack);
+int STACK_Size(STACK *stack);
 Node *createNode(int value);
 void push(STACK *stack, int value);
 int pop(STACK *stack);
