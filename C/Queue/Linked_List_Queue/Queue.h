@@ -4,8 +4,7 @@
 typedef struct Node
 {
     int data;
-    struct Node *head;
-    struct Node *tail;
+    struct Node *next;
 } Node;
 
 typedef struct Queue
