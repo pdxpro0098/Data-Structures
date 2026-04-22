@@ -11,14 +11,13 @@ typedef struct Node
 typedef struct Queue
 {
     int size;
-    int capacity;
-    int front;
-    int rear;
+    Node *front;
+    Node *rear;
 } Queue;
 
-void Queue_init(Queue *queue, int maxSize);
+void Queue_init(Queue *queue);
+Node *createNode(int value);
 int isEmpty(Queue *queue);
-int isFull(Queue *queue);
 void enqueue(Queue *queue, int value);
 int dequeue(Queue *queue);
 int peek(Queue *queue);
