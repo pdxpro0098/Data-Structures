@@ -1,3 +1,6 @@
+#include "UTILITY.h"
+#include <stdio.h>
+
 #define ARRAY_LENGTH(x) (sizeof(x) / sizeof((x)[0]))
 #define IS_EVEN(x) x % 2 == 0
 #define IS_ODD(x) x % 2 == 1

@@ -1,2 +1,2 @@
-gcc *.c -o main.exe 
+gcc *.c ..\..\UTILITY.c -o main.exe
 main.exe
