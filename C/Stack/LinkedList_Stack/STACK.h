@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../../UTILITY.h"
 
 typedef struct Node
 {
@@ -15,7 +16,6 @@ typedef struct
 
 void STACK_init(STACK *stack);
 int STACK_Size(STACK *stack);
-Node *createNode(int value);
 void push(STACK *stack, int value);
 int pop(STACK *stack);
 int top(STACK *stack);

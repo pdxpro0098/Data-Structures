@@ -1,14 +1,6 @@
 #include "CLL.h"
 #include <stdio.h>
 
-Node *createNode(int value)
-{
-    Node *newNode = (Node *)malloc(sizeof(Node));
-    newNode->next = NULL;
-    newNode->data = value;
-    return newNode;
-}
-
 void CList_init(CList *list)
 {
     list->head = NULL;

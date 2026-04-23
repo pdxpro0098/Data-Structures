@@ -1,6 +1,6 @@
 #define ARRAY_LENGTH(x) (sizeof(x) / sizeof((x)[0]))
-#define IS_EVEN(x)  x % 2 == 0
-#define IS_ODD(x)  x % 2 == 1
+#define IS_EVEN(x) x % 2 == 0
+#define IS_ODD(x) x % 2 == 1
 
 void swap(int *a, int *b)
 {
@@ -26,4 +26,12 @@ int isPrime(int n)
     }
 
     return 1;
+}
+
+Node *createNode(int value)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = value;
+    newNode->next = NULL;
+    return newNode;
 }
