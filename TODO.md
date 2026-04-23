@@ -3,16 +3,15 @@
 # Implement Various Data Structure in multiple languages  
   - [ ] C  
     - [x] Array  
-    - [] Stack  
+    - [x] Stack  
       - [x] Array Stack   
-      - [ ] Linked list Stack   
-    - [ ] Queue
+      - [x] Linked list Stack   
+    - [x] Queue
       - [x] Array Queue  
         - [x] Circular Queue  
         - [x] Double Ended Queue - Working
         - [x] Linear Queue
-        - [ ] Priority Queue
-      - [ ] Linked list Queue  
+      - [x] Linked list Queue  
     - [x] Linked list
       - [x] Singly   
       - [x] Doubly   
