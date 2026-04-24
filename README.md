@@ -11,18 +11,24 @@
 │   ├── Array/
 │   │
 │   ├── Stack/
-│   │   └── Array Stack/
+│   │   ├── Array Stack/
+│   │   └── Queue Stack/
 │   │
 │   ├── Queue/
-│   │   └── Array Queue/
-│   │       └── Linear Queue/
-│   │       └── Circular Queue/
-│   │       └── Double Ended Queue/
-│   │       
-│   └── Linked List/
-│       └── Singly Linked List/
-│       └── Doubly Linked List/
-│       └── Circular Linked List/
+│   │   ├── Array Queue/
+│   │   │   ├── Linear Queue/
+│   │   │   ├── Circular Queue/
+│   │   │   └── Double Ended Queue/
+│   │   │   
+│   │   └── LinkedList Queue/
+│   │   
+│   ├── Linked List/
+│   │   ├── Singly Linked List/
+│   │   ├── Doubly Linked List/
+│   │   ├── Circular Linked List/
+│   │   └── Doubly Circular Linked List/ 
+│   │
+│   └── Tree/
 │
 ├── README.md
 └── Todo.md

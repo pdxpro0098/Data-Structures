@@ -9,7 +9,7 @@
     - [x] Queue
       - [x] Array Queue  
         - [x] Circular Queue  
-        - [x] Double Ended Queue - Working
+        - [x] Double Ended Queue
         - [x] Linear Queue
       - [x] Linked list Queue  
     - [x] Linked list
