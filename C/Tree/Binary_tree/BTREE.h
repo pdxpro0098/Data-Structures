@@ -19,8 +19,8 @@ typedef struct Queue
 
 void initQueue(Queue *queue);
 void push(Queue *queue, Node *node);
-void pop(Queue *queue);
-void isEmpty(Queue *queue);
+Node* pop(Queue *queue);
+int isEmpty(Queue *queue);
 
 typedef struct BTREE
 {
