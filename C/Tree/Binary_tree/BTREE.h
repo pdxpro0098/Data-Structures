@@ -8,6 +8,20 @@ typedef struct Node
     struct Node *right;
 } Node;
 
+typedef struct Queue
+{
+    int size;
+    int capacity;
+    int front;
+    int rear;
+    Node *queue[];
+} Queue;
+
+void initQueue(Queue *queue);
+void push(Queue *queue, Node *node);
+void pop(Queue *queue);
+void isEmpty(Queue *queue);
+
 typedef struct BTREE
 {
     Node *root;
