@@ -14,13 +14,14 @@ typedef struct Queue
     int capacity;
     int front;
     int rear;
-    Node *queue[];
+    Node *queue[100];
 } Queue;
 
 void initQueue(Queue *queue);
-void push(Queue *queue, Node *node);
-Node* pop(Queue *queue);
+void enqueue(Queue *queue, Node *node);
+Node *dequeue(Queue *queue);
 int isEmpty(Queue *queue);
+void freeQueue(Queue *queue);
 
 typedef struct BTREE
 {
@@ -29,13 +30,13 @@ typedef struct BTREE
     int height;
 } BTREE;
 
-void initBTREE(BTREE *root);
+void initBTREE(BTREE *tree);
 Node *createNode(int value);
-void addChild(BTREE *root, Node *child);
-void removeChild(BTREE *root);
+void insert(BTREE *tree, int data);
+void delete(BTREE *tree);
 Node *search(int key);
-void *preOrder(BTREE *root);
-void *inOrder(BTREE *root);
-void *postOrder(BTREE *root);
-int getHeight(BTREE *root);
-int getSize(BTREE *root);
+void preOrder(BTREE *tree);
+void inOrder(BTREE *tree);
+void postOrder(BTREE *tree);
+int getHeight(BTREE *tree);
+int getSize(BTREE *tree);

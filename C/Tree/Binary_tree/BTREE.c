@@ -7,15 +7,17 @@ void initQueue(Queue *queue)
     queue->front = -1;
     queue->rear = -1;
     queue->capacity = 100;
-    queue->queue[queue->capacity];
 }
 
-void push(Queue *queue, Node *node)
+void enqueue(Queue *queue, Node *node)
 {
+    if (queue->size >= 100)
+        return;
+
     if (isEmpty(queue))
     {
-        queue->front++;
-        queue->rear++;
+        queue->front = 0;
+        queue->rear = 0;
     }
     else
     {
@@ -25,19 +27,20 @@ void push(Queue *queue, Node *node)
     queue->size++;
 }
 
-Node *pop(Queue *queue)
+Node *dequeue(Queue *queue)
 {
     if (isEmpty(queue))
-    {
         return NULL;
-    }
+
+    Node *node = queue->queue[queue->front];
     queue->front++;
-    return queue->queue[queue->front];
+    queue->size--;
+    return node;
 }
 
 int isEmpty(Queue *queue)
 {
-    return queue->size <= queue->capacity;
+    return queue->size == 0;
 }
 
 void freeQueue(Queue *queue)
@@ -60,37 +63,88 @@ Node *createNode(int value)
     newNode->data = value;
     newNode->left = NULL;
     newNode->right = NULL;
+    return newNode;
 }
 
-void addChild(BTREE *root, Node *child)
+void insert(BTREE *tree, int data)
 {
-    if (root->size == 0)
+    Node *newNode = createNode(data);
+
+    if (tree->root == NULL)
     {
-        root->root = child;
-        root->size++;
-        root->height++;
+        tree->root = newNode;
+        tree->size++;
         return;
     }
+
+    Queue *queue = (Queue *)malloc(sizeof(Queue));
+    initQueue(queue);
+
+    enqueue(queue, tree->root);
+
+    while (!isEmpty(queue))
+    {
+        Node *temp = dequeue(queue);
+
+        if (temp->left == NULL)
+        {
+            temp->left = newNode;
+            break;
+        }
+        else
+        {
+            enqueue(queue, temp->left);
+        }
+
+        if (temp->right == NULL)
+        {
+            temp->right = newNode;
+            break;
+        }
+        else
+        {
+            enqueue(queue, temp->right);
+        }
+    }
+
+    tree->size++;
+    freeQueue(queue);
 }
 
-void removeChild(BTREE *root)
+void delete(BTREE *tree)
 {
 }
 
 Node *search(int key) {}
 
-void *preOrder(BTREE *root) {}
-
-void *inOrder(BTREE *root) {}
-
-void *postOrder(BTREE *root) {}
-
-int getHeight(BTREE *root)
+void PREORDER_RECURSIVE(Node *root)
 {
-    return root->height;
+    if (root == NULL)
+        return;
+    printf("%d ", root->data);
+    PREORDER_RECURSIVE(root->left);
+    PREORDER_RECURSIVE(root->right);
 }
 
-int getSize(BTREE *root)
+void preOrder(BTREE *tree)
 {
-    return root->size;
+    if (tree != NULL && tree->root != NULL)
+    {
+        PREORDER_RECURSIVE(tree->root);
+        printf("\n");
+    }
+}
+
+void inOrder(BTREE *tree) {}
+
+void postOrder(BTREE *tree) {}
+
+int getHeight(BTREE *tree)
+{
+    return tree->height;
+}
+
+int getSize(BTREE *tree)
+{
+    return tree->size;
 }
