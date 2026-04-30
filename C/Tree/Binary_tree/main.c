@@ -9,6 +9,8 @@ int main()
     insert(t, 3);
     insert(t, 4);
     insert(t, 5);
-    preOrder(t);
+    // preOrder(t);
+    printf(" height = %d", BTREE_Height(t));
+
     return 0;
 }

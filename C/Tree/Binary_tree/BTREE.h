@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "..\..\UTILITY.h"
 
 typedef struct Node
 {
@@ -27,16 +28,15 @@ typedef struct BTREE
 {
     Node *root;
     int size;
-    int height;
 } BTREE;
 
 void initBTREE(BTREE *tree);
 Node *createNode(int value);
 void insert(BTREE *tree, int data);
-void delete(BTREE *tree);
+void delete (BTREE *tree);
 Node *search(int key);
 void preOrder(BTREE *tree);
 void inOrder(BTREE *tree);
 void postOrder(BTREE *tree);
-int getHeight(BTREE *tree);
-int getSize(BTREE *tree);
+int BTREE_Height(BTREE *tree);
+int BTREE_Size(BTREE *tree);

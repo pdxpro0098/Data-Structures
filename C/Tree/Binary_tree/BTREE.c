@@ -52,7 +52,6 @@ void freeQueue(Queue *queue)
 
 void initBTREE(BTREE *root)
 {
-    root->height = 0;
     root->size = 0;
     root->root = NULL;
 }
@@ -117,20 +116,20 @@ void delete(BTREE *tree)
 
 Node *search(int key) {}
 
-void PREORDER_RECURSIVE(Node *root)
+void PREORDER(Node *root)
 {
     if (root == NULL)
         return;
     printf("%d ", root->data);
-    PREORDER_RECURSIVE(root->left);
-    PREORDER_RECURSIVE(root->right);
+    PREORDER(root->left);
+    PREORDER(root->right);
 }
 
 void preOrder(BTREE *tree)
 {
     if (tree != NULL && tree->root != NULL)
     {
-        PREORDER_RECURSIVE(tree->root);
+        PREORDER(tree->root);
         printf("\n");
     }
 }
@@ -139,12 +138,24 @@ void inOrder(BTREE *tree) {}
 
 void postOrder(BTREE *tree) {}
 
-int getHeight(BTREE *tree)
+int HEIGHT(Node *root)
 {
-    return tree->height;
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    int leftHeight = HEIGHT(root->left);
+    int rightHeight = HEIGHT(root->right);
+    return MAX(leftHeight, rightHeight) + 1;
 }
 
-int getSize(BTREE *tree)
+int BTREE_Height(BTREE *tree)
+{
+    return HEIGHT(tree->root);
+}
+
+int BTREE_Size(BTREE *tree)
 {
     return tree->size;
 }
