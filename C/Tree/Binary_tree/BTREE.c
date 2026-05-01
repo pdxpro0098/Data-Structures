@@ -134,9 +134,41 @@ void preOrder(BTREE *tree)
     }
 }
 
-void inOrder(BTREE *tree) {}
+void INORDER(Node *root)
+{
+    if (root == NULL)
+        return;
+    INORDER(root->left);
+    printf("%d ", root->data);
+    INORDER(root->right);
+}
 
-void postOrder(BTREE *tree) {}
+void inOrder(BTREE *tree)
+{
+    if (tree != NULL && tree->root != NULL)
+    {
+        INORDER(tree->root);
+        printf("\n");
+    }
+}
+
+void POSTORDER(Node *root)
+{
+    if (root == NULL)
+        return;
+    POSTORDER(root->left);
+    POSTORDER(root->right);
+    printf("%d ", root->data);
+}
+
+void postOrder(BTREE *tree)
+{
+    if (tree != NULL && tree->root != NULL)
+    {
+        POSTORDER(tree->root);
+        printf("\n");
+    }
+}
 
 int HEIGHT(Node *root)
 {
