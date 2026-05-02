@@ -9,9 +9,8 @@ int main()
     insert(t, 3);
     insert(t, 4);
     insert(t, 5);
-    preOrder(t);
-    inOrder(t);
-    postOrder(t);
 
+    Node *temp = search(t, 12);
+    printf("%d", temp==NULL);
     return 0;
 }

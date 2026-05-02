@@ -114,7 +114,31 @@ void delete(BTREE *tree)
 {
 }
 
-Node *search(int key) {}
+Node *SEARCH(Node *root, int key)
+{
+    if (root == NULL) 
+    {
+        return NULL;
+    }
+    Node *temp = root;
+    if (temp->data == key)
+    {
+        return temp;
+    }
+
+    Node *leftRes = SEARCH(root->left, key);
+    if (leftRes != NULL)
+    {
+        return leftRes;
+    }
+
+    return SEARCH(root->right, key);
+}
+
+Node *search(BTREE *tree, int key)
+{
+    return SEARCH(tree->root, key);
+}
 
 void PREORDER(Node *root)
 {
