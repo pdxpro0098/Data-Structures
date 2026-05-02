@@ -112,11 +112,61 @@ void insert(BTREE *tree, int data)
 
 void delete(BTREE *tree)
 {
+    if (tree == NULL || tree->root == NULL)
+        return;
+
+    Queue *queue = (Queue *)malloc(sizeof(Queue));
+    initQueue(queue);
+
+    enqueue(queue, tree->root);
+
+    Node *temp = NULL;
+    Node *parent = NULL;
+
+    while (!isEmpty(queue))
+    {
+        temp = dequeue(queue);
+
+        if (temp->left)
+        {
+            parent = temp;
+            enqueue(queue, temp->left);
+        }
+
+        if (temp->right)
+        {
+            parent = temp;
+            enqueue(queue, temp->right);
+        }
+    }
+
+    if (temp == tree->root)
+    {
+        free(tree->root);
+        tree->root = NULL;
+        tree->size = 0;
+        freeQueue(queue);
+        return;
+    }
+
+    if (parent->right == temp)
+    {
+        parent->right = NULL;
+    }
+    else if (parent->left == temp)
+    {
+        parent->left = NULL;
+    }
+
+    free(temp);
+    tree->size--;
+
+    freeQueue(queue);
 }
 
 Node *SEARCH(Node *root, int key)
 {
-    if (root == NULL) 
+    if (root == NULL)
     {
         return NULL;
     }
