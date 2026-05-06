@@ -22,11 +22,45 @@ void delete(BST *tree) {};
 
 Node *search(BST *tree, int key) {};
 
-void preOrder(BST *tree) {};
+void PREORDER(Node *root)
+{
+    if (root == NULL)
+        return;
+    printf("%d ", root->data);
+    PREORDER(root->left);
+    PREORDER(root->right);
+}
 
-void inOrder(BST *tree) {};
+void preOrder(BST *tree)
+{
+    PREORDER(tree->root);
+};
 
-void postOrder(BST *tree) {};
+void INORDER(Node *root)
+{
+    if (root == NULL)
+        return;
+    INORDER(root->left);
+    printf("%d ", root->data);
+    INORDER(root->right);
+}
+
+void inOrder(BST *tree)
+{
+    INORDER(tree->root);
+};
+
+void POSTORDER(Node *root)
+{
+    if (root == NULL)
+        return;
+    POSTORDER(root->left);
+    POSTORDER(root->right);
+    printf("%d ", root->data);
+}
+void postOrder(BST *tree) {
+    POSTORDER(tree->root);
+};
 
 int HEIGHT(Node *root)
 {
