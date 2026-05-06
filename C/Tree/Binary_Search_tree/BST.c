@@ -1,7 +1,7 @@
 #include "BST.h"
 #include "..\..\UTILITY.h"
 
-void initBTREE(BST *tree)
+void initBST(BST *tree)
 {
     tree->root = NULL;
     tree->size = 0;
@@ -14,13 +14,97 @@ Node *createNode(int value)
     newNode->left = NULL;
     newNode->right = NULL;
     return newNode;
+};
+
+int INSERT(Node *root, int data)
+{
+    Node *prev = NULL;
+
+    while (root != NULL)
+    {
+        prev = root;
+
+        if (data == root->data)
+        {
+            return 0;
+        }
+        else if (data < root->data)
+        {
+            root = root->left;
+        }
+        else
+        {
+            root = root->right;
+        }
+    }
+
+    Node *newNode = createNode(data);
+
+    if (newNode == NULL)
+    {
+        return 0;
+    }
+
+    if (data < prev->data)
+    {
+        prev->left = newNode;
+    }
+    else
+    {
+        prev->right = newNode;
+    }
+
+    return 1;
 }
 
-void insert(BST *tree, int data) {};
+void insert(BST *tree, int data)
+{
+    if (tree->root == NULL)
+    {
+        tree->root = createNode(data);
+        tree->size++;
+    }
+    else
+    {
+        if (INSERT(tree->root, data))
+        {
+            tree->size++;
+        }
+    }
+}
 
 void delete(BST *tree) {};
 
-Node *search(BST *tree, int key) {};
+Node *SEARCH(Node *root, int key)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+
+    if (key == root->data)
+    {
+        return root;
+    }
+    else if (key > root->data)
+    {
+        return SEARCH(root->right, key);
+    }
+    else
+    {
+        return SEARCH(root->left, key);
+    }
+};
+
+Node *search(BST *tree, int key)
+{
+    if (tree->size == 0)
+    {
+        return NULL;
+    }
+
+    return SEARCH(tree->root, key);
+};
 
 void PREORDER(Node *root)
 {
@@ -58,7 +142,9 @@ void POSTORDER(Node *root)
     POSTORDER(root->right);
     printf("%d ", root->data);
 }
-void postOrder(BST *tree) {
+
+void postOrder(BST *tree)
+{
     POSTORDER(tree->root);
 };
 

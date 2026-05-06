@@ -4,8 +4,8 @@
 typedef struct Node
 {
     int data;
-    Node *left;
-    Node *right;
+    struct Node *left;
+    struct Node *right;
 } Node;
 
 typedef struct BST
@@ -14,7 +14,7 @@ typedef struct BST
     int size;
 } BST;
 
-void initBTREE(BST *tree);
+void initBST(BST *tree);
 Node *createNode(int value);
 void insert(BST *tree, int data);
 void delete (BST *tree);
