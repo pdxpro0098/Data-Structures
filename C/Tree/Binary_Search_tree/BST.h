@@ -17,7 +17,7 @@ typedef struct BST
 void initBST(BST *tree);
 Node *createNode(int value);
 void insert(BST *tree, int data);
-void delete (BST *tree);
+void delete(BST *tree, int key);
 Node *search(BST *tree, int key);
 void preOrder(BST *tree);
 void inOrder(BST *tree);

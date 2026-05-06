@@ -11,6 +11,7 @@ int main()
     insert(tree, 5);
     insert(tree, 6);
     insert(tree, 34);
+    delete(tree, 4);
     inOrder(tree);
     return 0;
 }
