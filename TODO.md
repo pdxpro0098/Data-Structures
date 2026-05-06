@@ -19,9 +19,10 @@
       - [x] Doubly circular   
     - [ ] Tree
       - [ ] General tree 
-      - [ ] Binary tree 
-      - [ ] Binary Search tree 
+      - [x] Binary tree 
+      - [x] Binary Search tree 
       - [ ] AVL tree 
+      - [ ] Red Black tree 
       - [ ] B-tree
     - [ ] Graph
       - [ ] Adjacency matrix

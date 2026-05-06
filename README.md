@@ -29,6 +29,8 @@
 │   │   └── Doubly Circular Linked List/ 
 │   │
 │   └── Tree/
+│       ├── Binary Tree/
+│       └── Binary Search Tree/ 
 │
 ├── README.md
 └── Todo.md
