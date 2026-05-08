@@ -1,11 +1,11 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct Node
 {
     int data;
-    struct Node *children;
-
+    struct Node *firstChild;
+    struct Node *nextSibling;
 } Node;
 
 typedef struct TREE
@@ -13,7 +13,8 @@ typedef struct TREE
     Node *root;
 } TREE;
 
-Node *createNode(int value);
-void addNode(TREE *tree, Node *child);
-void preOrder(TREE *tree);
-void postOrder(TREE *tree);
+void initTree(TREE *tree);
+Node *createNode(int data);
+void addChild(Node *parent, int data);
+void printTree(TREE *tree);
+void freeTree(Node *root);
