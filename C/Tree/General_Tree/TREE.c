@@ -1,12 +1,16 @@
 #include "TREE.h"
 
-Node *createNode(int value)
+void initTree(TREE *tree)
 {
-    Node *newNode = (Node *)malloc(sizeof(Node));
-    newNode->data = value;
-    newNode->children = NULL;
-    return newNode;
+    tree->root = NULL;
 }
 
-void addNode(TREE *tree, Node *child) {}
+Node *createNode(int data)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->firstChild = NULL;
+    newNode->nextSibling = NULL;
 
+    return newNode;
+}
