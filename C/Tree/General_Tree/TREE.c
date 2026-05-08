@@ -41,3 +41,39 @@ void addChild(Node *parent, int data)
         temp->nextSibling = child;
     }
 }
+
+static void PRINTTREE(Node *root, int level)
+{
+    if (root == NULL)
+        return;
+
+    for (int i = 0; i < level; i++)
+    {
+        printf("  ");
+    }
+
+    printf("%d\n", root->data);
+
+    PRINTTREE(root->firstChild, level + 1);
+
+    PRINTTREE(root->nextSibling, level);
+}
+
+void printTree(TREE *tree)
+{
+    if (tree == NULL)
+        return;
+
+    PRINTTREE(tree->root, 0);
+}
+
+void freeTree(Node *root)
+{
+    if (root == NULL)
+        return;
+
+    freeTree(root->firstChild);
+    freeTree(root->nextSibling);
+
+    free(root);
+}
