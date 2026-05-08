@@ -18,7 +18,7 @@
       - [x] Circular   
       - [x] Doubly circular   
     - [ ] Tree
-      - [ ] General tree 
+      - [x] General tree 
       - [x] Binary tree 
       - [x] Binary Search tree 
       - [ ] AVL tree 
