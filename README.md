@@ -30,7 +30,8 @@
 │   │
 │   └── Tree/
 │       ├── Binary Tree/
-│       └── Binary Search Tree/ 
+│       ├── Binary Search Tree/ 
+│       └── General tree/ 
 │
 ├── README.md
 └── Todo.md

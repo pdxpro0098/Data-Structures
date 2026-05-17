@@ -24,6 +24,7 @@
       - [ ] AVL tree 
       - [ ] Red Black tree 
       - [ ] B-tree
+      - [ ] Trie
     - [ ] Graph
       - [ ] Adjacency matrix
       - [ ] Adjacency list
