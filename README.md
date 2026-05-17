@@ -12,7 +12,7 @@
 │   │
 │   ├── Stack/
 │   │   ├── Array Stack/
-│   │   └── Queue Stack/
+│   │   └── Linked list Stack/
 │   │
 │   ├── Queue/
 │   │   ├── Array Queue/
@@ -20,7 +20,7 @@
 │   │   │   ├── Circular Queue/
 │   │   │   └── Double Ended Queue/
 │   │   │   
-│   │   └── LinkedList Queue/
+│   │   └── Linked List Queue/
 │   │   
 │   ├── Linked List/
 │   │   ├── Singly Linked List/

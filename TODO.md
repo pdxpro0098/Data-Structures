@@ -25,9 +25,12 @@
       - [ ] Red Black tree 
       - [ ] B-tree
       - [ ] Trie
+      - [ ] Segment Tree
     - [ ] Graph
-      - [ ] Adjacency matrix
-      - [ ] Adjacency list
+      - [ ] Undirected 
+      - [ ] Directed
+      - [ ] Weighted
+      - [ ] Unweighted
     - [ ] Heap
       - [ ] Min Heap 
       - [ ] Max Heap
