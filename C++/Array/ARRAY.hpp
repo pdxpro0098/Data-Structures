@@ -1,18 +1,17 @@
 #include <iostream>
+#include <cstdio>
 
 class ARRAY
 {
 private:
-    /* data */
+    int *array;
+
 public:
-    ARRAY(/* args */);
-    ~ARRAY();
+    ARRAY(int);
+    void init()
+    {
+        std::cout << "array init...";
+    }
+
+    void printArray();
 };
-
-ARRAY::ARRAY(/* args */)
-{
-}
-
-ARRAY::~ARRAY()
-{
-}

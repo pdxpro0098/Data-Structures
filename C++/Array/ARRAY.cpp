@@ -1,8 +1,14 @@
 #include "ARRAY.hpp"
 
-int main()
+ARRAY::ARRAY(int a)
 {
+    int *array = new int[10];
+};
 
-    std::cout << "hello";
-    return 0;
+void ARRAY::printArray()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << array[i] << std::endl;
+    }
 }
