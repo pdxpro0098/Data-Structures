@@ -13,10 +13,10 @@ public:
     ARRAY();
     ARRAY(int);
     void printArray();
-    int insert(int);
-    int remove();
-    int push_back(int);
-    int pop_back();
+    void insert(int);
+    void remove();
+    void push_back(int);
+    void pop_back();
 };
 
 /*

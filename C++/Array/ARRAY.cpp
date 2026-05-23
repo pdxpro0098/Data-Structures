@@ -17,34 +17,45 @@ ARRAY::ARRAY()
 void ARRAY::resize()
 {
     int *temp = array;
+    size += 2;
     array = new int[size + 2];
     for (int i = 0; i < length; i++)
     {
         array[i] = temp[i];
     }
 
-    size += 2;
+    delete[] temp;
 }
 
 void ARRAY::printArray()
 {
     for (int i = 0; i < length; i++)
     {
-        std::cout << array[i] << std::endl;
+        std::cout << i << array[i] << std::endl;
     }
 }
 
-int ARRAY::insert(int value)
+void ARRAY::insert(int value)
 {
-    return 0;
+    if (length == size)
+    {
+        resize();
+    }
+
+    for (int i = length; i >= 0; i--)
+    {
+        array[i] = array[i - 1];
+    }
+
+    array[0] = value;
+    length++;
 }
 
-int ARRAY::remove()
+void ARRAY::remove()
 {
-    return 0;
 }
 
-int ARRAY::push_back(int value)
+void ARRAY::push_back(int value)
 {
     if (length == size)
     {
@@ -53,10 +64,8 @@ int ARRAY::push_back(int value)
 
     array[length] = value;
     length++;
-    return 0;
 }
 
-int ARRAY::pop_back()
+void ARRAY::pop_back()
 {
-    return 0;
 }
