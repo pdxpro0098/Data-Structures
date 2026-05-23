@@ -14,9 +14,21 @@ ARRAY::ARRAY()
     array = new int[size];
 };
 
+void ARRAY::resize()
+{
+    int *temp = array;
+    array = new int[size + 2];
+    for (int i = 0; i < length; i++)
+    {
+        array[i] = temp[i];
+    }
+
+    size += 2;
+}
+
 void ARRAY::printArray()
 {
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < length; i++)
     {
         std::cout << array[i] << std::endl;
     }
@@ -24,7 +36,6 @@ void ARRAY::printArray()
 
 int ARRAY::insert(int value)
 {
-    array[0] = value;
     return 0;
 }
 
@@ -33,8 +44,15 @@ int ARRAY::remove()
     return 0;
 }
 
-int ARRAY::push_back()
+int ARRAY::push_back(int value)
 {
+    if (length == size)
+    {
+        resize();
+    }
+
+    array[length] = value;
+    length++;
     return 0;
 }
 

@@ -7,6 +7,7 @@ private:
     int *array;
     int length;
     int size;
+    void resize();
 
 public:
     ARRAY();
@@ -14,7 +15,7 @@ public:
     void printArray();
     int insert(int);
     int remove();
-    int push_back();
+    int push_back(int);
     int pop_back();
 };
 
