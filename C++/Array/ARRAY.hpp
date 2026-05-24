@@ -13,8 +13,8 @@ public:
     ARRAY();
     ARRAY(int);
     void printArray();
-    void insert(int);
-    void remove();
+    void push_front(int);
+    void pop_front();
     void push_back(int);
     void pop_back();
 };
@@ -55,5 +55,4 @@ erase	Erase elements (public member function)
 swap	Swap content (public member function)
 clear	Clear content (public member function)
 emplace	Construct and insert element (public member function)
-emplace_back	Construct and insert element at the end (public member function)
-*/
+emplace_back	Construct and insert element at the end (public member function)*/

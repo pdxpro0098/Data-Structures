@@ -31,11 +31,11 @@ void ARRAY::printArray()
 {
     for (int i = 0; i < length; i++)
     {
-        std::cout << i << array[i] << std::endl;
+        std::cout << array[i] << std::endl;
     }
 }
 
-void ARRAY::insert(int value)
+void ARRAY::push_front(int value)
 {
     if (length == size)
     {
@@ -51,8 +51,16 @@ void ARRAY::insert(int value)
     length++;
 }
 
-void ARRAY::remove()
+void ARRAY::pop_front()
 {
+    if (length > 0)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            array[i] = array[i + 1];
+        }
+        length--;
+    }
 }
 
 void ARRAY::push_back(int value)
@@ -68,4 +76,8 @@ void ARRAY::push_back(int value)
 
 void ARRAY::pop_back()
 {
+    if (length > 0)
+    {
+        length--;
+    }
 }
