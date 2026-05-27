@@ -96,3 +96,13 @@ bool ARRAY::empty()
 {
     return length == 0;
 }
+
+int ARRAY::size()
+{
+    return length;
+}
+
+int ARRAY::max_size()
+{
+    return capacity;
+}
