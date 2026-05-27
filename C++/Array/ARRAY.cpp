@@ -3,22 +3,22 @@
 ARRAY::ARRAY(int initialSize)
 {
     length = 0;
-    size = initialSize;
-    array = new int[size];
-};
+    capacity = initialSize;
+    array = new int[capacity];
+}
 
 ARRAY::ARRAY()
 {
     length = 0;
-    size = 2;
-    array = new int[size];
-};
+    capacity = 2;
+    array = new int[capacity];
+}
 
 void ARRAY::resize()
 {
     int *temp = array;
-    size += 2;
-    array = new int[size + 2];
+    capacity += 2;
+    array = new int[capacity + 2];
     for (int i = 0; i < length; i++)
     {
         array[i] = temp[i];
@@ -37,7 +37,7 @@ void ARRAY::printArray()
 
 void ARRAY::push_front(int value)
 {
-    if (length == size)
+    if (length == capacity)
     {
         resize();
     }
@@ -65,7 +65,7 @@ void ARRAY::pop_front()
 
 void ARRAY::push_back(int value)
 {
-    if (length == size)
+    if (length == capacity)
     {
         resize();
     }
@@ -80,4 +80,19 @@ void ARRAY::pop_back()
     {
         length--;
     }
+}
+
+int ARRAY::at(int index)
+{
+    if (index < 0)
+    {
+        std::cout << "Invalid index";
+    }
+
+    return array[index];
+}
+
+bool ARRAY::empty()
+{
+    return length == 0;
 }

@@ -6,7 +6,7 @@ class ARRAY
 private:
     int *array;
     int length;
-    int size;
+    int capacity;
     void resize();
 
 public:
@@ -17,18 +17,13 @@ public:
     void pop_front();
     void push_back(int);
     void pop_back();
+    int at(int);
+    bool empty();
+    int size();
+    int max_size();
 };
 
 /*
-Iterators:
-begin	Return iterator to beginning (public member function)
-end	Return iterator to end (public member function)
-rbegin	Return reverse iterator to reverse beginning (public member function)
-rend	Return reverse iterator to reverse end (public member function)
-cbegin	Return const_iterator to beginning (public member function)
-cend	Return const_iterator to end (public member function)
-crbegin	Return const_reverse_iterator to reverse beginning (public member function)
-crend	Return const_reverse_iterator to reverse end (public member function)
 
 Capacity:
 size	Return size (public member function)
