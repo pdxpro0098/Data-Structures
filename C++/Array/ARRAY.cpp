@@ -106,3 +106,13 @@ int ARRAY::max_size()
 {
     return capacity;
 }
+
+int ARRAY::front()
+{
+    return array[0];
+}
+
+int ARRAY::back()
+{
+    return array[length];
+}

@@ -21,6 +21,8 @@ public:
     bool empty();
     int size();
     int max_size();
+    int front();
+    int back();
 };
 
 /*
