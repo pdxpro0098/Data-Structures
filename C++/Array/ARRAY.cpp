@@ -18,7 +18,7 @@ void ARRAY::resize()
 {
     int *temp = array;
     capacity += 2;
-    array = new int[capacity + 2];
+    array = new int[capacity];
     for (int i = 0; i < length; i++)
     {
         array[i] = temp[i];
