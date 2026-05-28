@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdio>
 
 class ARRAY
 {
