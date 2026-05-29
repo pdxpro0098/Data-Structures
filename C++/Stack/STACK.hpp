@@ -4,7 +4,7 @@ class STACK
 {
 private:
     int *array;
-    int top;
+    int Top;
     int length;
     int capacity;
     void resize();
