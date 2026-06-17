@@ -1,26 +1,5 @@
 #include "QUEUE.hpp"
 
-class QUEUE
-{
-private:
-    int front;
-    int rear;
-    int length;
-    int capacity;
-    void resize();
-
-public:
-    int *array;
-    QUEUE();
-    QUEUE(int);
-    int peek();
-    int back();
-    void enqueue(int);
-    void dequeue();
-    int size();
-    bool isEmpty();
-};
-
 QUEUE::QUEUE()
 {
     front = -1;
@@ -83,11 +62,19 @@ void QUEUE::enqueue(int value)
 void QUEUE::dequeue()
 {
     if (isEmpty())
-    {
         return;
+
+    if (length == 1)
+    {
+        front = -1;
+        rear = -1;
+        length = 0;
     }
-    front = (front + 1) % capacity;
-    length--;
+    else
+    {
+        front = (front + 1) % capacity;
+        length--;
+    }
 }
 
 int QUEUE::size()
@@ -102,4 +89,22 @@ bool QUEUE::isEmpty()
 
 void QUEUE::resize()
 {
+    int *newArray = new int[capacity + 2];
+
+    for (int i = 0; i < length; i++)
+    {
+        newArray[i] = array[(front + i) % capacity];
+    }
+
+    delete[] array;
+
+    array = newArray;
+    capacity += 2;
+    front = 0;
+    rear = length - 1;
+}
+
+QUEUE::~QUEUE()
+{
+    delete[] array;
 }
