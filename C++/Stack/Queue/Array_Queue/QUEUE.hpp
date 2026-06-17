@@ -1,7 +1,8 @@
+#include <iostream>
+
 class QUEUE
 {
 private:
-    int *array;
     int front;
     int rear;
     int length;
@@ -9,6 +10,7 @@ private:
     void resize();
 
 public:
+    int *array;
     QUEUE();
     QUEUE(int);
     int peek();
