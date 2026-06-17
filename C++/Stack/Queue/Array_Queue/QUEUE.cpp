@@ -2,16 +2,30 @@
 
 QUEUE::QUEUE()
 {
+    front = -1;
+    rear = -1;
+    length = 0;
+    capacity = 2;
+    array = new int[capacity];
+}
+
+QUEUE::QUEUE(int size)
+{
+    front = -1;
+    rear = -1;
+    length = 0;
+    capacity = 2;
+    array = new int[size];
 }
 
 int QUEUE::peek()
 {
-    return 0;
+    return array[front];
 }
 
-int QUEUE::rear()
+int QUEUE::back()
 {
-    return 0;
+    return array[rear];
 }
 
 void QUEUE::enqueue(int)
@@ -24,12 +38,12 @@ void QUEUE::dequeue()
 
 int QUEUE::size()
 {
-    return 0;
+    return length;
 }
 
 bool QUEUE::isEmpty()
 {
-    return false;
+    return length == 0;
 }
 
 void QUEUE::resize()

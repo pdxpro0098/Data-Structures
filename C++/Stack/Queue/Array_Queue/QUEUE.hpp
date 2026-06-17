@@ -2,15 +2,17 @@ class QUEUE
 {
 private:
     int *array;
-    int Top;
+    int front;
+    int rear;
     int length;
     int capacity;
     void resize();
 
 public:
     QUEUE();
+    QUEUE(int);
     int peek();
-    int rear();
+    int back();
     void enqueue(int);
     void dequeue();
     int size();
