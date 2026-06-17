@@ -36,6 +36,10 @@
       - [ ] Max Heap
     - [ ] Hash Map
   - [ ] C++  
+    - [x] Array  
+    - [x] Stack  
+      - [x] Array Stack  
+    - [x] Queue  
   - [ ] Java  
   - [ ] Python  
   - [ ] JavaScript  

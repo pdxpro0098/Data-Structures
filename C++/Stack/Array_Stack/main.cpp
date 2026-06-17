@@ -9,7 +9,12 @@ int main()
     s.push(14);
     s.push(15);
     s.push(16);
-    s.pop();
-    std::cout << s.top();
+    while (!s.empty())
+    {
+        std::cout << s.top();
+        s.pop();
+        std::cout <<"\n";
+    }
+
     return 0;
 }
