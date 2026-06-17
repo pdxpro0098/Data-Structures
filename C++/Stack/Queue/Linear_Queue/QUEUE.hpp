@@ -16,5 +16,6 @@ public:
     void enqueue(int);
     void dequeue();
     int size();
-    bool isEmpty();
+    bool isEmpty(); 
+    bool isFull(); 
 };

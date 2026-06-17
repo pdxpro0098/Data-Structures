@@ -31,10 +31,33 @@ int QUEUE::peek()
 
 void QUEUE::enqueue(int value)
 {
+    if (isFull())
+    {
+        std::cout << "Queue is full";
+        return;
+    }
+
+    if (isEmpty())
+    {
+        front++;
+    }
+
+    rear++;
+    length++;
+    array[rear] = value;
 }
 
 void QUEUE::dequeue()
 {
+    if (isEmpty())
+    {
+        std::cout << "Queue is empty";
+    }
+    else
+    {
+        front++;
+        length--;
+    }
 }
 
 int QUEUE::size()
@@ -45,6 +68,11 @@ int QUEUE::size()
 bool QUEUE::isEmpty()
 {
     return length == 0;
+}
+
+bool QUEUE::isFull()
+{
+    return capacity == rear - 1;
 }
 
 QUEUE::~QUEUE()
