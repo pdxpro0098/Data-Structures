@@ -63,6 +63,40 @@ void LLIST::push_back(int value)
     this->length++;
 }
 
+void LLIST::pop_front()
+{
+    if (this->head == nullptr)
+        return;
+
+    Node *temp = this->head;
+    this->head = this->head->next;
+    length--;
+    delete (temp);
+}
+
+void LLIST::pop_back()
+{
+    if (this->head == nullptr)
+        return;
+
+    if (this->head->next == nullptr)
+    {
+        delete (this->head);
+        this->head = nullptr;
+    }
+    else
+    {
+        Node *temp = this->head;
+        while (temp->next->next != nullptr)
+        {
+            temp = temp->next;
+        }
+        delete (temp->next);
+        temp->next = nullptr;
+    }
+    length--;
+}
+
 int LLIST::front()
 {
     if (this->head != nullptr)
