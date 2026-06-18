@@ -16,14 +16,14 @@ LLIST::Node *LLIST::Node::create_node(int value)
 
 LLIST::LLIST()
 {
-    head = nullptr;
-    length = 0;
+    this->head = nullptr;
+    this->length = 0;
 }
 
 LLIST::LLIST(int data)
 {
     this->head = Node::create_node(data);
-    length = 1;
+    this->length = 1;
 }
 
 void LLIST::push_front(int value)
@@ -97,6 +97,36 @@ void LLIST::pop_back()
     length--;
 }
 
+void LLIST::insert_at(int value, int index)
+{
+    if (index <= 0)
+    {
+        this->push_front(value);
+        return;
+    }
+
+    if (index >= this->length)
+    {
+        this->push_back(value);
+        return;
+    }
+
+    Node *temp = this->head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *newNode = Node::create_node(value);
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+void LLIST::remove_at(int index)
+{
+    
+}
+
 int LLIST::front()
 {
     if (this->head != nullptr)
@@ -134,4 +164,16 @@ int LLIST::size()
 int LLIST::is_empty()
 {
     return this->length == 0;
+}
+
+void printList(LLIST list)
+{
+    list.temp = list.head;
+    while (list.temp != nullptr)
+    {
+        std::cout << list.temp->data << "->";
+        list.temp = list.temp->next;
+    }
+    std::cout << "null";
+    list.temp = list.head;
 }

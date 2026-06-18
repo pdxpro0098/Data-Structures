@@ -12,8 +12,8 @@ private:
         Node();
         static Node *create_node(int);
     };
-
     Node *head;
+    Node *temp = this->head;
     int length;
 
 public:
@@ -23,11 +23,13 @@ public:
     void push_back(int);
     void pop_front();
     void pop_back();
-    void insert_at(int);
+    void insert_at(int, int);
     void remove_at(int);
 
     int front();
     int back();
     int size();
     int is_empty();
+
+    friend void printList(LLIST list);
 };
