@@ -40,6 +40,13 @@
     - [x] Stack  
       - [x] Array Stack  
     - [x] Queue  
+      - [x] Linear Queue  
+      - [x] Circular Queue  
+    - [x] Linked list
+      - [x] Singly   
+      - [ ] Doubly   
+      - [ ] Circular   
+      - [ ] Doubly circular  
   - [ ] Java  
   - [ ] Python  
   - [ ] JavaScript  
