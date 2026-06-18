@@ -3,20 +3,20 @@
 class LLIST
 {
 private:
-    int length;
-    LLIST *head;
-
     class Node
     {
-    private:
+    public:
         Node *next;
         int data;
 
-    public:
-        Node(int);
+        Node();
+        static Node *create_node(int);
     };
 
+    int length;
+
 public:
+    Node *head;
     LLIST(int);
     LLIST();
     void push_front(int);
