@@ -124,7 +124,27 @@ void LLIST::insert_at(int value, int index)
 
 void LLIST::remove_at(int index)
 {
+    if (index <= 0)
+    {
+        this->pop_front();
+        return;
+    }
+
+    if (index >= this->length)
+    {
+        this->pop_back();
+        return;
+    }
+
+    Node *temp = this->head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
     
+    Node *toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete (toDelete);
 }
 
 int LLIST::front()

@@ -12,7 +12,7 @@ int main()
     l.push_front(16);
     l.push_front(17);
 
-    l.insert_at(99, 23);
+    l.remove_at(-30);
     printList(l);
     return 0;
 }
