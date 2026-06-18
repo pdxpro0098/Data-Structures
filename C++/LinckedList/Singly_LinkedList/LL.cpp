@@ -1,6 +1,11 @@
 #include "LL.hpp"
 
-LLIST::Node::Node() {};
+LLIST::Node::Node()
+{
+    this->data = 0;
+    this->next = nullptr;
+};
+
 LLIST::Node *LLIST::Node::create_node(int value)
 {
     Node *newNode = new Node();
@@ -9,10 +14,16 @@ LLIST::Node *LLIST::Node::create_node(int value)
     return newNode;
 };
 
-LLIST::LLIST() {}
+LLIST::LLIST()
+{
+    head = nullptr;
+    length = 0;
+}
+
 LLIST::LLIST(int data)
 {
     this->head = Node::create_node(data);
+    length = 1;
 }
 
 void LLIST::push_front(int value)
@@ -36,28 +47,49 @@ void LLIST::push_back(int value)
 {
     Node *newNode = Node::create_node(value);
 
-    Node *temp = this->head;
-    while (temp->next != nullptr)
+    if (this->head == nullptr)
     {
-        temp = temp->next;
+        head = newNode;
     }
-    temp->next = newNode;
+    else
+    {
+        Node *temp = this->head;
+        while (temp->next != nullptr)
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
     this->length++;
 }
 
 int LLIST::front()
 {
-    return this->head->data;
+    if (this->head != nullptr)
+    {
+        return this->head->data;
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 int LLIST::back()
 {
-    Node *temp = this->head;
-    while (temp->next != nullptr)
+    if (this->head != nullptr)
     {
-        temp = temp->next;
+        Node *temp = this->head;
+        while (temp->next != nullptr)
+        {
+            temp = temp->next;
+        }
+        return temp->data;
     }
-    return temp->data;
+    else
+    {
+        return -1;
+    }
 }
 
 int LLIST::size()

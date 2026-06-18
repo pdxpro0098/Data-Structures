@@ -13,10 +13,10 @@ private:
         static Node *create_node(int);
     };
 
+    Node *head;
     int length;
 
 public:
-    Node *head;
     LLIST();
     LLIST(int);
     void push_front(int);
