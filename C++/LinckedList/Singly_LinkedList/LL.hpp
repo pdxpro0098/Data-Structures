@@ -17,8 +17,8 @@ private:
 
 public:
     Node *head;
-    LLIST(int);
     LLIST();
+    LLIST(int);
     void push_front(int);
     void push_back(int);
     void pop_front();
