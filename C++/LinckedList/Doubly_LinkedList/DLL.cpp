@@ -15,3 +15,17 @@ DLLIST::Node *DLLIST::Node::create_node(int value)
     newNode->prev = nullptr;
     return newNode;
 }
+
+DLLIST::DLLIST()
+{
+    this->length = 0;
+    this->head = nullptr;
+    this->tail = nullptr;
+}
+
+DLLIST::DLLIST(int value)
+{
+    this->length = 1;
+    this->head = Node::create_node(value);
+    this->tail = head;
+}
