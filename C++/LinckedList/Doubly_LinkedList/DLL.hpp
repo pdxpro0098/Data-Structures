@@ -16,7 +16,6 @@ private:
 
     Node *head;
     Node *tail;
-    Node *temp = this->head;
     int length;
 
 public:
@@ -34,5 +33,6 @@ public:
     int size();
     int is_empty();
 
-    friend void printList(DLLIST list);
+    friend void printForword(DLLIST list);
+    friend void printBackword(DLLIST list);
 };

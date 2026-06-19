@@ -176,3 +176,25 @@ int DLLIST::is_empty()
 {
     return this->length == 0;
 }
+
+void printForword(DLLIST list)
+{
+    DLLIST::Node *temp = list.head;
+    while (temp->next != nullptr)
+    {
+        std::cout << temp->data << "->";
+        temp = temp->next;
+    }
+    std::cout << "null";
+}
+
+void printBackword(DLLIST list)
+{
+    std::cout << "null";
+    DLLIST::Node *temp = list.tail;
+    while (temp->prev != nullptr)
+    {
+        std::cout << temp->data << "<-";
+        temp = temp->prev;
+    }
+}
