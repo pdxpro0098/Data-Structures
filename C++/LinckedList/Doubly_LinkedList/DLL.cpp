@@ -63,3 +63,43 @@ void DLLIST::push_back(int value)
     }
     this->length++;
 }
+
+void DLLIST::pop_front()
+{
+    if (this->head == nullptr)
+    {
+        return;
+    }
+
+    if (this->head->next == nullptr)
+    {
+        delete (this->head);
+        this->head = nullptr;
+        return;
+    }
+
+    Node *temp = this->head;
+    this->head = this->head->next;
+    this->head->prev = nullptr;
+    delete (temp);
+    this->length--;
+}
+
+void DLLIST::pop_back()
+{
+    if (this->tail == nullptr)
+        return;
+
+    if (this->tail->prev == nullptr)
+    {
+        delete (this->tail);
+        this->tail = nullptr;
+        return;
+    }
+
+    Node *temp = this->tail;
+    this->tail = this->tail->prev;
+    this->tail->next = nullptr;
+    delete (temp);
+    this->length--;
+}
