@@ -13,7 +13,6 @@ private:
         static Node *create_node(int);
     };
     Node *head;
-    Node *temp = this->head;
     int length;
 
 public:

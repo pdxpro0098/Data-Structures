@@ -141,7 +141,7 @@ void LLIST::remove_at(int index)
     {
         temp = temp->next;
     }
-    
+
     Node *toDelete = temp->next;
     temp->next = temp->next->next;
     delete (toDelete);
@@ -188,12 +188,11 @@ int LLIST::is_empty()
 
 void printList(LLIST list)
 {
-    list.temp = list.head;
-    while (list.temp != nullptr)
+    LLIST::Node *temp = list.head;
+    while (temp->next != nullptr)
     {
-        std::cout << list.temp->data << "->";
-        list.temp = list.temp->next;
+        std::cout << temp->data << "->";
+        temp = temp->next;
     }
     std::cout << "null";
-    list.temp = list.head;
 }
