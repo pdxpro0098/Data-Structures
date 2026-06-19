@@ -29,3 +29,37 @@ DLLIST::DLLIST(int value)
     this->head = Node::create_node(value);
     this->tail = head;
 }
+
+void DLLIST::push_front(int value)
+{
+    Node *newNode = Node::create_node(value);
+
+    if (this->head == nullptr)
+    {
+        this->head = this->tail = newNode;
+    }
+    else
+    {
+        newNode->next = this->head;
+        this->head->prev = newNode;
+        this->head = newNode;
+    }
+    this->length++;
+}
+
+void DLLIST::push_back(int value)
+{
+
+    Node *newNode = Node::create_node(value);
+    if (this->tail == NULL)
+    {
+        this->head = this->tail = newNode;
+    }
+    else
+    {
+        newNode->prev = this->tail;
+        this->tail->next = newNode;
+        this->tail = newNode;
+    }
+    this->length++;
+}
