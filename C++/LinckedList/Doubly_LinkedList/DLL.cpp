@@ -156,3 +156,23 @@ void DLLIST::remove_at(int index)
     delete (toDelete);
     this->length--;
 }
+
+int DLLIST::front()
+{
+    return this->head->data;
+}
+
+int DLLIST::back()
+{
+    return this->tail->data;
+}
+
+int DLLIST::size()
+{
+    return this->length;
+}
+
+int DLLIST::is_empty()
+{
+    return this->length == 0;
+}
