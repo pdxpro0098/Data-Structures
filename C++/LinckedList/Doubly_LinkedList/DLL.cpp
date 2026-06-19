@@ -93,7 +93,6 @@ void DLLIST::pop_back()
         delete (this->tail);
         this->tail = this->head = nullptr;
         this->length--;
-
         return;
     }
 
@@ -101,5 +100,59 @@ void DLLIST::pop_back()
     this->tail = this->tail->prev;
     this->tail->next = nullptr;
     delete (temp);
+    this->length--;
+}
+
+void DLLIST::insert_at(int value, int index)
+{
+    if (index <= 0)
+    {
+        push_front(value);
+        return;
+    }
+
+    if (index >= this->length)
+    {
+        push_back(value);
+        return;
+    }
+
+    Node *newNode = Node::create_node(value);
+    Node *temp = this->head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
+
+    newNode->prev = temp->prev;
+    newNode->next = temp;
+    temp->prev->next = newNode;
+    temp->prev = newNode;
+    this->length++;
+}
+
+void DLLIST::remove_at(int index)
+{
+    if (index <= 0)
+    {
+        pop_front();
+        return;
+    }
+
+    if (index >= this->length)
+    {
+        pop_back();
+        return;
+    }
+
+    Node *temp = this->head;
+    for (int i = 1; i < index; i++)
+    {
+        temp = temp->next;
+    }
+    Node *toDelete = temp->next;
+    temp->next = temp->next->next;
+    temp->next->prev = temp;
+    delete (toDelete);
     this->length--;
 }
