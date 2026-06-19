@@ -16,8 +16,8 @@ private:
 
     Node *head;
     Node *tail;
-    int length;
     Node *temp = this->head;
+    int length;
 
 public:
     DLLIST();
