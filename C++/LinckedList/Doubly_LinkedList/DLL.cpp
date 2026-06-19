@@ -3,24 +3,21 @@
 DLLIST::Node::Node()
 {
     this->data = 0;
-    this->next = nullptr;
-    this->prev = nullptr;
+    this->next = this->prev = nullptr;
 }
 
 DLLIST::Node *DLLIST::Node::create_node(int value)
 {
     Node *newNode = new Node();
     newNode->data = value;
-    newNode->next = nullptr;
-    newNode->prev = nullptr;
+    newNode->next = newNode->prev = nullptr;
     return newNode;
 }
 
 DLLIST::DLLIST()
 {
     this->length = 0;
-    this->head = nullptr;
-    this->tail = nullptr;
+    this->head = this->tail = nullptr;
 }
 
 DLLIST::DLLIST(int value)
@@ -74,7 +71,8 @@ void DLLIST::pop_front()
     if (this->head->next == nullptr)
     {
         delete (this->head);
-        this->head = nullptr;
+        this->head = this->tail = nullptr;
+        this->length--;
         return;
     }
 
@@ -93,7 +91,9 @@ void DLLIST::pop_back()
     if (this->tail->prev == nullptr)
     {
         delete (this->tail);
-        this->tail = nullptr;
+        this->tail = this->head = nullptr;
+        this->length--;
+
         return;
     }
 
