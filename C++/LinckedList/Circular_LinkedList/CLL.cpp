@@ -61,6 +61,55 @@ void CLIST::push_back(int value)
     length++;
 }
 
+void CLIST::pop_front()
+{
+    if (this->head == nullptr)
+    {
+        return;
+    }
+
+    if (this->head == this->tail)
+    {
+        delete (this->head);
+        this->head = this->tail = nullptr;
+    }
+    else
+    {
+        head = head->next;
+        delete (tail->next);
+        tail->next = head;
+    }
+    this->length--;
+}
+
+void CLIST::pop_back()
+{
+    if (this->head == nullptr)
+    {
+        return;
+    }
+
+    if (this->head == this->tail)
+    {
+        delete (this->head);
+        this->head = this->tail = nullptr;
+    }
+    else
+    {
+        Node *temp = this->head;
+
+        while (temp->next != this->tail)
+        {
+            temp = temp->next;
+        }
+
+        delete (temp->next);
+        temp->next = this->head;
+        this->tail = temp;
+    }
+    this->length--;
+}
+
 void printList(CLIST list)
 {
     CLIST::Node *temp = list.head;
