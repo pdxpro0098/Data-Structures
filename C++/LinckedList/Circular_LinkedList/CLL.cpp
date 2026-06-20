@@ -46,14 +46,27 @@ void CLIST::push_front(int value)
 
 void CLIST::push_back(int value)
 {
+    Node *newNode = Node::create_node(value);
+
+    if (this->head == nullptr)
+    {
+        this->head = this->tail = newNode;
+    }
+    else
+    {
+        newNode->next = this->head;
+        this->tail->next = newNode;
+        this->tail = newNode;
+    }
+    length++;
 }
 
 void printList(CLIST list)
 {
     CLIST::Node *temp = list.head;
-    for (int i = 0; i < list.length; i++)
+    do
     {
         std::cout << temp->data << "->";
         temp = temp->next;
-    }
+    } while (temp != list.head);
 }
