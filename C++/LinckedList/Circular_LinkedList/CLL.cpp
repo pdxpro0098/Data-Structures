@@ -16,8 +16,7 @@ CLIST::Node *CLIST::Node::create_node(int value)
 
 CLIST::CLIST()
 {
-    this->head = nullptr;
-    this->tail = nullptr;
+    this->head = this->tail = nullptr;
     this->length = 0;
 }
 
@@ -26,4 +25,35 @@ CLIST::CLIST(int value)
     this->head = Node::create_node(value);
     this->tail = head;
     this->length = 1;
+}
+
+void CLIST::push_front(int value)
+{
+    Node *newNode = Node::create_node(value);
+
+    if (this->head == nullptr)
+    {
+        this->head = this->tail = newNode;
+    }
+    else
+    {
+        newNode->next = this->head;
+        this->head = newNode;
+        this->tail->next = this->head;
+    }
+    length++;
+}
+
+void CLIST::push_back(int value)
+{
+}
+
+void printList(CLIST list)
+{
+    CLIST::Node *temp = list.head;
+    for (int i = 0; i < list.length; i++)
+    {
+        std::cout << temp->data << "->";
+        temp = temp->next;
+    }
 }
