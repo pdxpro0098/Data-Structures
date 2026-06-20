@@ -1,6 +1,6 @@
 #include <iostream>
 
-class LLIST
+class CLIST
 {
 private:
     class Node
@@ -13,11 +13,12 @@ private:
         static Node *create_node(int);
     };
     Node *head;
+    Node *tail;
     int length;
 
 public:
-    LLIST();
-    LLIST(int);
+    CLIST();
+    CLIST(int);
     void push_front(int);
     void push_back(int);
     void pop_front();
@@ -30,5 +31,5 @@ public:
     int size();
     int is_empty();
 
-    friend void printList(LLIST list);
+    friend void printList(CLIST list);
 };
