@@ -161,22 +161,22 @@ void CLIST::remove_at(int index)
 
 int CLIST::front()
 {
-    return 0;
+    return this->head->data;
 }
 
 int CLIST::back()
 {
-    return 0;
+    return this->tail->data;
 }
 
 int CLIST::size()
 {
-    return 0;
+    return this->length;
 }
 
 int CLIST::is_empty()
 {
-    return 0;
+    return this->length == 0;
 }
 
 void printList(CLIST list)
