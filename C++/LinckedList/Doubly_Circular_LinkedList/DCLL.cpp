@@ -31,6 +31,8 @@ void DCLIST::push_front(int value)
     if (this->head == nullptr)
     {
         this->head = this->tail = newNode;
+        newNode->next = newNode;
+        newNode->prev = newNode;
     }
     else
     {
@@ -75,7 +77,15 @@ int DCLIST::back()
     return this->tail->data;
 }
 
+int DCLIST::size()
+{
+    return this->length;
+}
 
+int DCLIST::is_empty()
+{
+    return this->length == 0;
+}
 
 void printForword(DCLIST list)
 {
