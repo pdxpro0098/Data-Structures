@@ -67,6 +67,50 @@ void DCLIST::push_back(int value)
     this->length++;
 }
 
+void DCLIST::pop_front()
+{
+    if (this->head == nullptr)
+    {
+        return;
+    }
+
+    if (this->head == this->tail)
+    {
+        delete (this->head);
+        this->head = this->tail = nullptr;
+    }
+    else
+    {
+        this->head = this->head->next;
+        this->head->prev = this->tail;
+        delete (this->tail->next);
+        this->tail->next = this->head;
+    }
+    this->length--;
+}
+
+void DCLIST::pop_back()
+{
+    if (this->head == nullptr)
+    {
+        return;
+    }
+
+    if (this->head == this->tail)
+    {
+        delete (this->head);
+        this->head = this->tail = nullptr;
+    }
+    else
+    {
+        this->tail = this->tail->prev;
+        this->head->prev = this->tail;
+        delete (this->tail->next);
+        this->tail->next = this->head;
+    }
+    this->length--;
+}
+
 int DCLIST::front()
 {
     return this->head->data;
