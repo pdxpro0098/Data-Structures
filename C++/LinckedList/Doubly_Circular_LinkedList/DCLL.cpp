@@ -44,9 +44,38 @@ void DCLIST::push_front(int value)
     this->length++;
 }
 
-void DCLIST::push_back(int)
+void DCLIST::push_back(int value)
 {
+    Node *newNode = Node::create_node(value);
+    if (this->head == nullptr)
+    {
+        this->head = this->tail = newNode;
+        newNode->next = newNode;
+        newNode->prev = newNode;
+    }
+    else
+    {
+        newNode->next = this->head;
+        newNode->prev = this->tail;
+        this->head->prev = newNode;
+        this->tail->next = newNode;
+        this->tail = newNode;
+    }
+
+    this->length++;
 }
+
+int DCLIST::front()
+{
+    return this->head->data;
+}
+
+int DCLIST::back()
+{
+    return this->tail->data;
+}
+
+
 
 void printForword(DCLIST list)
 {
