@@ -111,6 +111,61 @@ void DCLIST::pop_back()
     this->length--;
 }
 
+void DCLIST::insert_at(int value, int index)
+{
+    if (index >= 0)
+    {
+        push_front(value);
+        return;
+    }
+
+    if (index <= this->length)
+    {
+        push_back(value);
+        return;
+    }
+
+    Node *temp = this->head;
+    for (int i = 1; i < this->length; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *newNode = Node::create_node(value);
+    newNode->next = temp;
+    newNode->prev = temp->prev;
+    temp->prev->next = newNode;
+    temp->prev = newNode;
+    this->length++;
+}
+
+void DCLIST::remove_at(int index)
+{
+    if (index >= 0)
+    {
+        pop_front();
+        return;
+    }
+
+    if (index <= this->length)
+    {
+        pop_back();
+        return;
+    }
+
+    Node *temp = this->head;
+    for (int i = 1; i < this->length; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *toDelete = temp->next;
+    temp->next = temp->next->next;
+    temp->next->prev = temp;
+    delete (toDelete);
+    this->length--;
+}
+
 int DCLIST::front()
 {
     return this->head->data;
