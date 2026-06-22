@@ -11,13 +11,12 @@ private:
 
     public:
         Node();
-        Node(int);
+        static Node *create_node(int);
     };
 
-    Node *head;
+    Node *front;
+    Node *rear;
     int length;
-    int front;
-    int rear;
 
 public:
     QUEUE();
