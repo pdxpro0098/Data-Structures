@@ -30,7 +30,7 @@ void QUEUE::enqueue(int value)
 {
     Node *newNode = Node::create_node(value);
 
-    if (this->length == 0)
+    if (this->isEmpty())
     {
         this->front = this->rear = newNode;
     }
@@ -44,11 +44,11 @@ void QUEUE::enqueue(int value)
 
 void QUEUE::dequeue()
 {
-    if (this->length == 0)
+    if (this->isEmpty())
     {
         return;
     }
-    else if (this->length == 1)
+    else if (this->size() == 1)
     {
         delete (this->front);
         this->front = this->rear = nullptr;
@@ -60,4 +60,19 @@ void QUEUE::dequeue()
         delete (toDelete);
     }
     this->length--;
+}
+
+int QUEUE::peek()
+{
+    return this->front->data;
+}
+
+int QUEUE::size()
+{
+    return this->length;
+}
+
+bool QUEUE::isEmpty()
+{
+    return this->length == 0;
 }
