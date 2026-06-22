@@ -5,11 +5,10 @@ class QUEUE
 private:
     class Node
     {
-    private:
+    public:
         Node *next;
         int data;
 
-    public:
         Node();
         static Node *create_node(int);
     };
