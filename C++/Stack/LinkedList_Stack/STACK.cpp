@@ -60,3 +60,18 @@ void STACK::pop()
     }
     this->length--;
 }
+
+bool STACK::empty()
+{
+    return this->length == 0;
+}
+
+int STACK::size()
+{
+    return this->length;
+}
+
+int STACK::top()
+{
+    return this->head->data;
+}
