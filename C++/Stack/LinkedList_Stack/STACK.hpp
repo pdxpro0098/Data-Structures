@@ -19,9 +19,9 @@ private:
 public:
     STACK();
     STACK(int);
-    int top();
-    int size();
     void push(int);
     void pop();
+    int top();
+    int size();
     bool empty();
 };
