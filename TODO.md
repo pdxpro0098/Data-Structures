@@ -39,14 +39,15 @@
     - [x] Array  
     - [x] Stack  
       - [x] Array Stack  
+      - [x] LinkedList Stack  
     - [x] Queue  
       - [x] Linear Queue  
       - [x] Circular Queue  
     - [x] Linked list
       - [x] Singly   
-      - [ ] Doubly   
-      - [ ] Circular   
-      - [ ] Doubly circular  
+      - [x] Doubly   
+      - [x] Circular   
+      - [x] Doubly circular  
   - [ ] Java  
   - [ ] Python  
   - [ ] JavaScript  
