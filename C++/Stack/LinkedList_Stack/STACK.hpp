@@ -10,14 +10,15 @@ private:
         int data;
 
         Node();
-        Node *create_node(int);
+        static Node *create_node(int);
     };
 
-    Node *top;
+    Node *head;
     int length;
 
 public:
     STACK();
+    STACK(int);
     int top();
     int size();
     void push(int);
