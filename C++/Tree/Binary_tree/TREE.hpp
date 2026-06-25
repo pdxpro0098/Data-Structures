@@ -21,8 +21,8 @@ private:
     Node *root;
 
     void _preOrder(Node *root);
-    void _inOrder();
-    void _postOrder();
+    void _inOrder(Node *root);
+    void _postOrder(Node *root);
 
 public:
     TREE();

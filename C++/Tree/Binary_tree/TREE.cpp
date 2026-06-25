@@ -73,3 +73,48 @@ void TREE::addChild(int data)
 
     this->_size++;
 }
+
+void TREE::_preOrder(Node *root)
+{
+    if (root != nullptr)
+    {
+        std::cout << root->data;
+        _preOrder(root->left);
+        _preOrder(root->right);
+    }
+}
+
+void TREE::_inOrder(Node *root)
+{
+    if (root != nullptr)
+    {
+        _inOrder(root->left);
+        std::cout << root->data;
+        _inOrder(root->right);
+    }
+}
+
+void TREE::_postOrder(Node *root)
+{
+    if (root == nullptr)
+    {
+        _postOrder(root->left);
+        _postOrder(root->right);
+        std::cout << root->data;
+    }
+}
+
+void TREE::preOrder()
+{
+    _preOrder(this->root);
+}
+
+void TREE::inOrder()
+{
+    _inOrder(this->root);
+}
+
+void TREE::postOrder()
+{
+    _postOrder(this->root);
+}
