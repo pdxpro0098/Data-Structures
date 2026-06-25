@@ -1,13 +1,14 @@
 #include <iostream>
+#include <queue>
 
 class TREE
 {
 private:
     int data;
-    int size;
-    static TREE *create_node(int);
     TREE *left;
     TREE *right;
+    static int size;
+    static TREE *create_root(int);
 
 public:
     TREE();
