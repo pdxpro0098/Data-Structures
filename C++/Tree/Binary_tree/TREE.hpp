@@ -16,17 +16,23 @@ private:
         static Node *createNode(int data);
     };
 
-    int size;
-    int height;
+    int _size;
+    int _height;
     Node *root;
+
+    void _preOrder(Node *root);
+    void _inOrder();
+    void _postOrder();
 
 public:
     TREE();
     TREE(int);
     void addChild(int);
     void removeChild(int);
-    void inOrder();
     void preOrder();
+    void inOrder();
     void postOrder();
     bool search(int);
+    int size();
+    int height();
 };
