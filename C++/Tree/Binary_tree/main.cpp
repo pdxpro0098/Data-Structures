@@ -10,5 +10,7 @@ int main()
     t.addChild(18);
     // std::cout << t.size();
     t.preOrder();
+    t.inOrder();
+    t.postOrder();
     return 0;
 }
