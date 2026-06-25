@@ -4,11 +4,21 @@
 class TREE
 {
 private:
-    int data;
-    TREE *left;
-    TREE *right;
-    static int size;
-    static TREE *create_root(int);
+    class Node
+    {
+    public:
+        int data;
+        Node *left;
+        Node *right;
+
+        Node(int);
+        Node();
+        static Node *createNode(int data);
+    };
+
+    int size;
+    int height;
+    Node *root;
 
 public:
     TREE();
