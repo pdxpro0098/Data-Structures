@@ -22,13 +22,13 @@ TREE::Node::Node(int data)
 
 TREE::TREE()
 {
-    this->_size = this->_height = 0;
+    this->_size = 0;
     this->root = nullptr;
 };
 
 TREE::TREE(int data)
 {
-    this->_size = this->_height = 1;
+    this->_size = 1;
     this->root = Node::createNode(data);
 };
 
@@ -248,4 +248,29 @@ TREE::Node *TREE::_search(Node *root, int key)
 bool TREE::search(int key)
 {
     return _search(this->root, key);
+}
+
+int TREE::size()
+{
+    return this->_size;
+}
+
+int TREE::_height(Node *root)
+{
+    if (!root)
+        return 0;
+
+    auto max = [](int leftH, int rightH) -> int
+    {
+        if (leftH > rightH)
+            return leftH;
+        return rightH;
+    };
+
+    return 1 + max(_height(root->left), _height(root->right));
+}
+
+int TREE::height()
+{
+    return _height(this->root);
 }

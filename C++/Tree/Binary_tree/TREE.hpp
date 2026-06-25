@@ -17,13 +17,13 @@ private:
     };
 
     int _size;
-    int _height;
     Node *root;
 
     void _preOrder(Node *root);
     void _inOrder(Node *root);
     void _postOrder(Node *root);
     Node *_search(Node *root, int);
+    int _height(Node *root);
 
 public:
     TREE();

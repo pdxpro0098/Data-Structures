@@ -9,6 +9,6 @@ int main()
     t.addChild(16);
     t.addChild(18);
 
-    std::cout << t.search(1200);
+    std::cout << t.height();
     return 0;
 }
