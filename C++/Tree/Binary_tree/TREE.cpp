@@ -222,3 +222,30 @@ void TREE::postOrder()
 {
     _postOrder(this->root);
 }
+
+TREE::Node *TREE::_search(Node *root, int key)
+{
+    if (root == nullptr)
+    {
+        return nullptr;
+    }
+
+    if (root->data == key)
+    {
+        return root;
+    }
+
+    Node *temp = _search(root->left, key);
+
+    if (temp != nullptr)
+    {
+        return temp;
+    }
+
+    return _search(root->right, key);
+}
+
+bool TREE::search(int key)
+{
+    return _search(this->root, key);
+}

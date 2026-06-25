@@ -34,7 +34,7 @@ public:
     void preOrder();
     void inOrder();
     void postOrder();
-    Node *search(int);
+    bool search(int);
     int size();
     int height();
 };
