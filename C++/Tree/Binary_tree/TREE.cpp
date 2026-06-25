@@ -74,6 +74,110 @@ void TREE::addChild(int data)
     this->_size++;
 }
 
+void TREE::removeChild(int key)
+{
+    if (this->root == nullptr)
+    {
+        return;
+    }
+
+    if (this->root->left == nullptr && this->root->right == nullptr)
+    {
+        if (this->root->data == key)
+        {
+            delete (this->root);
+            this->root = nullptr;
+            this->_size--;
+        }
+        return;
+    }
+
+    std::queue<Node *> que;
+    que.push(this->root);
+
+    Node *toDelete = nullptr;
+    Node *lastNode = nullptr;
+
+    while (!que.empty())
+    {
+        lastNode = que.front();
+        que.pop();
+
+        if (lastNode->data == key)
+        {
+            toDelete = lastNode;
+        }
+
+        if (lastNode->left)
+        {
+            que.push(lastNode->left);
+        }
+
+        if (lastNode->right)
+        {
+            que.push(lastNode->right);
+        }
+    }
+
+    if (toDelete)
+    {
+        toDelete->data = lastNode->data;
+        removeChild();
+    }
+}
+
+void TREE::removeChild()
+{
+    if (this->root == nullptr)
+    {
+        return;
+    }
+
+    if (this->root->left == nullptr && this->root->right == nullptr)
+    {
+        delete (this->root);
+        this->root = nullptr;
+        this->_size--;
+        return;
+    }
+
+    std::queue<Node *> que;
+    que.push(this->root);
+
+    Node *toDelete = nullptr;
+    Node *parent = nullptr;
+
+    while (!que.empty())
+    {
+        toDelete = que.front();
+        que.pop();
+
+        if (toDelete->left)
+        {
+            parent = toDelete;
+            que.push(toDelete->left);
+        }
+
+        if (toDelete->right)
+        {
+            parent = toDelete;
+            que.push(toDelete->right);
+        }
+    }
+
+    if (parent->right == toDelete)
+    {
+        parent->right = nullptr;
+    }
+    else
+    {
+        parent->left = nullptr;
+    }
+
+    this->_size--;
+    delete (toDelete);
+}
+
 void TREE::_preOrder(Node *root)
 {
     if (root != nullptr)

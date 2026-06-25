@@ -8,9 +8,9 @@ int main()
     t.addChild(15);
     t.addChild(16);
     t.addChild(18);
-    // std::cout << t.size();
     t.preOrder();
-    t.inOrder();
-    t.postOrder();
+    t.removeChild(12);
+    t.preOrder();
+    // std::cout << t.search(12)->left->data;
     return 0;
 }

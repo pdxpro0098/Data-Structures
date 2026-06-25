@@ -23,16 +23,18 @@ private:
     void _preOrder(Node *root);
     void _inOrder(Node *root);
     void _postOrder(Node *root);
+    Node *_search(Node *root, int);
 
 public:
     TREE();
     TREE(int);
     void addChild(int);
     void removeChild(int);
+    void removeChild();
     void preOrder();
     void inOrder();
     void postOrder();
-    bool search(int);
+    Node *search(int);
     int size();
     int height();
 };
