@@ -4,13 +4,20 @@
 class TREE
 {
 private:
-    int data;
-    std::vector<TREE> children;
-    static TREE *create_node(int);
+    class Node
+    {
+    public:
+        int data;
+        std::vector<Node *> children;
+
+        Node(int);
+        Node();
+        static Node *createNode(int data);
+    };
 
 public:
     TREE();
-    void addChild(TREE *node);
-    void removeChild(TREE *node);
+    void addChild();
+    void removeChild();
     void printTree();
 };
