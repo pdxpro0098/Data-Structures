@@ -3,7 +3,7 @@
 
 class TREE
 {
-private:
+public:
     class Node
     {
     public:
@@ -17,11 +17,9 @@ private:
 
     int _size;
     Node *root;
-    void _printTree();
+    void _printTree(Node *root);
 
-public:
-    TREE();
-    void addChild();
-    void removeChild();
+    TREE(int);
+    void addChild(Node *,int);
     void printTree();
 };
