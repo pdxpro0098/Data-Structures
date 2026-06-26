@@ -15,6 +15,10 @@ private:
         static Node *createNode(int data);
     };
 
+    int _size;
+    Node *root;
+    void _printTree();
+
 public:
     TREE();
     void addChild();
