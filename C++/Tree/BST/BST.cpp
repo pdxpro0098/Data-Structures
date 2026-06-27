@@ -73,6 +73,64 @@ void BST::addChild(int value)
     this->_size++;
 }
 
+BST::Node *BST::getSuccessor(BST::Node *root)
+{
+    Node *temp = root->right;
+
+    while (temp->left != NULL)
+    {
+        temp = temp->left;
+    }
+    return temp;
+}
+
+BST::Node *BST::_removeChild(BST::Node *root, int key)
+{
+    if (root == nullptr)
+        return nullptr;
+
+    if (key < root->data)
+    {
+        root->left = _removeChild(root->left, key);
+    }
+    else if (key > root->data)
+    {
+        root->right = _removeChild(root->right, key);
+    }
+    else
+    {
+        if (root->left == nullptr)
+        {
+            Node *temp = root->right;
+            delete root;
+            return temp;
+        }
+        if (root->right == nullptr)
+        {
+            Node *temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        Node *predecessor = getSuccessor(root);
+        root->data = predecessor->data;
+        root->left = _removeChild(root->left, predecessor->data);
+    }
+    return root;
+}
+
+void BST::removeChild(int value)
+{
+    if (this->root == NULL)
+        return;
+
+    if (search(value))
+    {
+        this->root = _removeChild(this->root, value);
+        this->_size--;
+    }
+}
+
 void BST::_preOrder(Node *root)
 {
     if (root != nullptr)
@@ -116,4 +174,53 @@ void BST::inOrder()
 void BST::postOrder()
 {
     _postOrder(this->root);
+}
+
+BST::Node *BST::_search(BST::Node *root, int key)
+{
+    if (root == nullptr || root->data == key)
+        return root;
+
+    else if (root->data > key)
+        return _search(root->left, key);
+
+    else
+        return _search(root->right, key);
+
+    return nullptr;
+}
+
+bool BST::search(int key)
+{
+    return _search(this->root, key) != nullptr;
+}
+
+int BST::size()
+{
+    return this->_size;
+}
+
+int BST::height()
+{
+    return 0;
+}
+
+int BST::_height(Node *root)
+{
+    if (!root)
+        return 0;
+
+    auto max = [](int leftH, int rightH) -> int
+    {
+        if (leftH > rightH)
+            return leftH;
+        return rightH;
+    };
+
+    return 1 + max(_height(root->left), _height(root->right));
+}
+
+int BST::height()
+{
+    return _height(this->root);
 }
