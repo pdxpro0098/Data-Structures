@@ -17,7 +17,8 @@ private:
 
     int _size;
     Node *root;
-
+    Node *getSuccessor(Node *);
+    Node *_removeChild(Node *, int);
     void _preOrder(Node *);
     void _inOrder(Node *);
     void _postOrder(Node *);
@@ -29,7 +30,6 @@ public:
     BST(int);
     void addChild(int);
     void removeChild(int);
-    void removeChild();
     void preOrder();
     void inOrder();
     void postOrder();
