@@ -12,9 +12,7 @@ TREE::Node::Node(int data)
 
 TREE::Node *TREE::Node::createNode(int data)
 {
-    Node *newNode = new Node();
-    newNode->data = data;
-    newNode->children;
+    Node *newNode = new Node(data);
     return newNode;
 }
 
@@ -35,10 +33,8 @@ void TREE::_printTree(Node *root)
     if (root == nullptr)
         return;
 
-    // Print current node
     std::cout << root->data << " ";
 
-    // Print all children recursively
     for (Node *child : root->children)
     {
         _printTree(child);

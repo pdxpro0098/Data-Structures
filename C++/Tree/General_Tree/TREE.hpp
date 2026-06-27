@@ -12,12 +12,12 @@ public:
 
         Node(int);
         Node();
-        static Node *createNode(int data);
+        static Node *createNode(int);
     };
 
     int _size;
     Node *root;
-    void _printTree(Node *root);
+    void _printTree(Node *);
 
     TREE(int);
     void addChild(Node *,int);

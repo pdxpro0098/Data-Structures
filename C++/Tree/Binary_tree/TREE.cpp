@@ -6,18 +6,16 @@ TREE::Node::Node()
     this->left = this->right = nullptr;
 };
 
-TREE::Node *TREE::Node::createNode(int data)
-{
-    Node *newNode = new Node();
-    newNode->data = data;
-    newNode->left = newNode->right = nullptr;
-    return newNode;
-};
-
 TREE::Node::Node(int data)
 {
     this->data = data;
     this->left = this->right = nullptr;
+};
+
+TREE::Node *TREE::Node::createNode(int data)
+{
+    Node *newNode = new Node(data);
+    return newNode;
 };
 
 TREE::TREE()
