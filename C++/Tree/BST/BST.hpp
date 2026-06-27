@@ -12,17 +12,17 @@ private:
 
         Node();
         Node(int);
-        static Node *createNode(int data);
+        static Node *createNode(int);
     };
 
     int _size;
     Node *root;
 
-    void _preOrder(Node *root);
-    void _inOrder(Node *root);
-    void _postOrder(Node *root);
-    Node *_search(Node *root, int);
-    int _height(Node *root);
+    void _preOrder(Node *);
+    void _inOrder(Node *);
+    void _postOrder(Node *);
+    Node *_search(Node *, int);
+    int _height(Node *);
 
 public:
     BST();

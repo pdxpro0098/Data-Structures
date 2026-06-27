@@ -4,11 +4,11 @@ BST::Node::Node()
 {
 }
 
-BST::Node::Node()
+BST::Node::Node(int data)
 {
 }
 
-BST::Node *BST::Node::createNode(int)
+BST::Node *BST::Node::createNode(int data)
 {
-    
+
 }
