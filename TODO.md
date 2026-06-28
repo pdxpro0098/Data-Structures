@@ -41,13 +41,34 @@
       - [x] Array Stack  
       - [x] LinkedList Stack  
     - [x] Queue  
-      - [x] Linear Queue  
-      - [x] Circular Queue  
+      - [x] Array Queue
+        - [x] Linear Queue  
+        - [x] Circular Queue
+        - [ ] Double Ended Queue
+      - [x] Linked list Queue
     - [x] Linked list
       - [x] Singly   
       - [x] Doubly   
       - [x] Circular   
       - [x] Doubly circular  
+    - [x] Tree
+      - [x] General tree
+      - [x] Binary tree
+      - [x] Binary Search tree
+      - [ ] AVL tree
+      - [ ] Red Black tree
+      - [ ] B-tree
+      - [ ] Trie
+      - [ ] Segment Tree
+    - [ ] Graph
+      - [ ] Undirected 
+      - [ ] Directed
+      - [ ] Weighted
+      - [ ] Unweighted
+    - [ ] Heap
+      - [ ] Min Heap 
+      - [ ] Max Heap
+    - [ ] Hash Map
   - [ ] Java  
   - [ ] Python  
   - [ ] JavaScript  

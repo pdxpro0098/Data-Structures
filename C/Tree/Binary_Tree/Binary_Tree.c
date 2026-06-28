@@ -1,4 +1,4 @@
-#include "BTREE.h"
+#include "Binary_Tree.h"
 
 /*Queue Function */
 void initQueue(Queue *queue)

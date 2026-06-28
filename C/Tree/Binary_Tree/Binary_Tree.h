@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "..\..\UTILITY.h"
+#include "..\..\Utility.h"
 
 typedef struct Node
 {
@@ -34,7 +34,7 @@ void initBTREE(BTREE *tree);
 Node *createNode(int value);
 void insert(BTREE *tree, int data);
 void delete (BTREE *tree);
-Node *search(BTREE *tree,int key);
+Node *search(BTREE *tree, int key);
 void preOrder(BTREE *tree);
 void inOrder(BTREE *tree);
 void postOrder(BTREE *tree);

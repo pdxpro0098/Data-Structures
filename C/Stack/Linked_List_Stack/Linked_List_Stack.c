@@ -1,4 +1,4 @@
-#include "STACK.h"
+#include "Linked_List_Stack.h"
 
 void STACK_init(STACK *stack)
 {

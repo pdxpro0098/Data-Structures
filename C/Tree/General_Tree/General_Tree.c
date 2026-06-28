@@ -1,4 +1,4 @@
-#include "TREE.h"
+#include "General_Tree.h"
 
 void initTree(TREE *tree)
 {

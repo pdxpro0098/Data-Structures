@@ -1,4 +1,4 @@
-#include "UTILITY.h"
+#include "Utility.h"
 #include <stdio.h>
 
 #define ARRAY_LENGTH(x) (sizeof(x) / sizeof((x)[0]))

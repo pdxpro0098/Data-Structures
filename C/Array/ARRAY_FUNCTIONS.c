@@ -1,4 +1,4 @@
-#include "ARRAY.h"
+#include "Array.h"
 
 void ARRAY_Print(ARRAY *array)
 {

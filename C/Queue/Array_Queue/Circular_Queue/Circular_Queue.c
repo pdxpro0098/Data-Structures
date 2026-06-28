@@ -1,4 +1,4 @@
-#include "CQUEUE.h"
+#include "Circular_Queue.h"
 
 void Queue_init(QUEUE *queue)
 {

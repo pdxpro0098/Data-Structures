@@ -1,4 +1,4 @@
-#include "DEQueue.h"
+#include "Double_Ended_Queue.h"
 
 void DEQueue_init(DEQueue *queue, int maxSize)
 {
