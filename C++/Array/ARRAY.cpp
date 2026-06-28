@@ -1,4 +1,4 @@
-#include "ARRAY.hpp"
+#include "Array.hpp"
 
 ARRAY::ARRAY(int initialSize)
 {

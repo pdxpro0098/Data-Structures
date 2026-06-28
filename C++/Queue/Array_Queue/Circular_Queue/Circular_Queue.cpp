@@ -1,4 +1,4 @@
-#include "QUEUE.hpp"
+#include "Circular_Queue.hpp"
 
 QUEUE::QUEUE()
 {
@@ -29,20 +29,32 @@ int QUEUE::peek()
     return array[front];
 }
 
-void QUEUE::enqueue(int value)
+int QUEUE::back()
 {
-    if (isFull())
-    {
-        std::cout << "Queue is full";
-        return;
-    }
-
     if (isEmpty())
     {
-        front++;
+        std::cout << "Queue is Empty";
+        return 0;
+    }
+    return array[rear];
+}
+
+void QUEUE::enqueue(int value)
+{
+    if (length == capacity)
+    {
+        resize();
     }
 
-    rear++;
+    if (front == -1 && rear == -1)
+    {
+        front++;
+        rear++;
+    }
+    else
+    {
+        rear = (rear + 1) % capacity;
+    }
     length++;
     array[rear] = value;
 }
@@ -50,12 +62,17 @@ void QUEUE::enqueue(int value)
 void QUEUE::dequeue()
 {
     if (isEmpty())
+        return;
+
+    if (length == 1)
     {
-        std::cout << "Queue is empty";
+        front = -1;
+        rear = -1;
+        length = 0;
     }
     else
     {
-        front++;
+        front = (front + 1) % capacity;
         length--;
     }
 }
@@ -70,9 +87,21 @@ bool QUEUE::isEmpty()
     return length == 0;
 }
 
-bool QUEUE::isFull()
+void QUEUE::resize()
 {
-    return capacity == rear - 1;
+    int *newArray = new int[capacity + 2];
+
+    for (int i = 0; i < length; i++)
+    {
+        newArray[i] = array[(front + i) % capacity];
+    }
+
+    delete[] array;
+
+    array = newArray;
+    capacity += 2;
+    front = 0;
+    rear = length - 1;
 }
 
 QUEUE::~QUEUE()

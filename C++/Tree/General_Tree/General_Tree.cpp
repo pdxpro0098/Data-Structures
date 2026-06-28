@@ -1,4 +1,4 @@
-#include "TREE.hpp"
+#include "General_Tree.hpp"
 
 TREE::Node::Node()
 {
