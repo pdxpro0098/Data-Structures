@@ -3,3 +3,5 @@
 temp.*
 .vscode/
 *Compile_run.bat
+Main.*
+main.*
