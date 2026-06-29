@@ -77,10 +77,24 @@ class ARRAY {
         this.length--;
     }
 
+    public void insert_At(int index, int value) {
+        if (isFull())
+            reSize();
+
+        for (int i = length; i > index; i--) {
+            arr[i] = arr[i - 1];
+        }
+
+        arr[index] = value;
+        this.length++;
+    }
+
+    public void delete_At(int index) {
+
+    }
 }
 
 /*
- * int insert_At(ARRAY *array, int index, int value);
- * int delete_At(ARRAY *array, int index);
+ * 
  * void ARRAY_free(ARRAY *array);
  */
