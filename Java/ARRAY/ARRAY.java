@@ -17,6 +17,16 @@ class ARRAY {
         this.length = 0;
     }
 
+    public void reSize() {
+        this.capacity += 2;
+        int[] newArr = new int[this.capacity];
+
+        for (int i = 0; i < arr.length; i++) {
+            newArr[i] = arr[i];
+        }
+        arr = newArr;
+    }
+
     public int size() {
         return this.length;
     }
@@ -29,7 +39,17 @@ class ARRAY {
         return length == capacity;
     }
 
+    public void insert_front(int value) {
+        if (isFull())
+            reSize();
 
+        for (int i = this.length; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+
+        arr[0] = value;
+        this.length++;
+    }
 }
 
 /*
