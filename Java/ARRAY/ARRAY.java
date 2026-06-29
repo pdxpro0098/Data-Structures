@@ -50,17 +50,20 @@ class ARRAY {
         arr[0] = value;
         this.length++;
     }
+
+    public void insert_back(int value) {
+        if (isFull())
+            reSize();
+
+        arr[length] = value;
+        this.length++;
+    }
 }
 
 /*
- * void ARRAY_init(ARRAY *array);
- * int ARRAY_Size(ARRAY *array);
- * void insert_back(ARRAY *array, int value);
- * void insert_front(ARRAY *array, int value);
  * void delete_back(ARRAY *array);
  * void delete_front(ARRAY *array);
  * int insert_At(ARRAY *array, int index, int value);
  * int delete_At(ARRAY *array, int index);
- * void ARRAY_empty(ARRAY *array);
  * void ARRAY_free(ARRAY *array);
  */
