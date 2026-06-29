@@ -17,6 +17,18 @@ class ARRAY {
         this.length = 0;
     }
 
+    public int size() {
+        return this.length;
+    }
+
+    public boolean isEmpty() {
+        return length == 0;
+    }
+
+    public boolean isFull() {
+        return length == capacity;
+    }
+
 
 }
 
