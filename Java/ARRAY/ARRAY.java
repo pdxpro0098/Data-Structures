@@ -58,11 +58,28 @@ class ARRAY {
         arr[length] = value;
         this.length++;
     }
+
+    public void delete_back() {
+        if (isEmpty())
+            return;
+
+        this.length--;
+    }
+
+    public void delete_front() {
+        if (isEmpty())
+            return;
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr[i + 1];
+        }
+
+        this.length--;
+    }
+
 }
 
 /*
- * void delete_back(ARRAY *array);
- * void delete_front(ARRAY *array);
  * int insert_At(ARRAY *array, int index, int value);
  * int delete_At(ARRAY *array, int index);
  * void ARRAY_free(ARRAY *array);
