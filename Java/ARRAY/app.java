@@ -14,7 +14,7 @@ public class App {
         a.insert_back(8);
         a.insert_back(9);
 
-        a.insert_At(4, 99);
+        a.delete_At(4);
         for (int i : a.arr) {
             System.out.println(i);
         }

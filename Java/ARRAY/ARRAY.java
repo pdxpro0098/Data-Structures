@@ -81,6 +81,11 @@ class ARRAY {
         if (isFull())
             reSize();
 
+        if (index > 0 || index < this.length) {
+            System.out.println("Error: invalid index");
+            return;
+        }
+        
         for (int i = length; i > index; i--) {
             arr[i] = arr[i - 1];
         }
@@ -90,11 +95,18 @@ class ARRAY {
     }
 
     public void delete_At(int index) {
+        if (isEmpty())
+            return;
 
+        if (index > 0 || index < this.length) {
+            System.out.println("Error: invalid index");
+            return;
+        }
+
+        for (int i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+
+        this.length--;
     }
 }
-
-/*
- * 
- * void ARRAY_free(ARRAY *array);
- */
