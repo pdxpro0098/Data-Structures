@@ -8,16 +8,16 @@ public class Queue {
     private int[] que;
 
     Queue() {
-        this.front = 0;
-        this.rear = 0;
+        this.front = -1;
+        this.rear = -1;
         this.length = 0;
         this.capacity = 10;
         this.que = new int[10];
     }
 
     Queue(int capacity) {
-        this.front = 0;
-        this.rear = 0;
+        this.front = -1;
+        this.rear = -1;
         this.length = 0;
         this.capacity = capacity;
         this.que = new int[capacity];
