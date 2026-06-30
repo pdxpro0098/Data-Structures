@@ -5,4 +5,4 @@ gcc *.c -o main.exe  ; main.exe
 g++ *.cpp -o main.exe  ; main.exe
 
 :: Compile and Run Java program
-java
+java App.java
