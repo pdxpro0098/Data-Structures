@@ -25,13 +25,13 @@ public class Queue {
     }
 
     private void resize() {
-        int[] newque = new int[this.capacity + 2];
+        int[] newQueue = new int[this.capacity + 2];
 
         for (int i = 0; i < length; i++) {
-            newque[i] = que[(front + i) % capacity];
+            newQueue[i] = que[(front + i) % capacity];
         }
 
-        que = newque;
+        que = newQueue;
         capacity += 2;
         front = 0;
         rear = length - 1;
