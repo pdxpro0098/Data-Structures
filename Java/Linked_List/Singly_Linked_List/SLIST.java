@@ -1,5 +1,7 @@
 package Java.Linked_List.Singly_Linked_List;
 
+import org.w3c.dom.Node;
+
 public class SLIST {
 
     private int length;
@@ -51,10 +53,6 @@ public class SLIST {
         this.length++;
     }
 
-    public int size() {
-        return this.length;
-    }
-
     public void pop_front() {
         if (this.head == null) {
             return;
@@ -82,6 +80,52 @@ public class SLIST {
         this.length--;
     }
 
+    public void insert_at(int data, int index) {
+        if (index <= 0) {
+            this.push_front(data);
+            return;
+        }
+
+        if (index >= this.length) {
+            this.push_back(data);
+            return;
+        }
+
+        Node temp = this.head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        Node newNode = new Node(data);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        this.length++;
+    }
+
+    public void remove_at(int index) {
+        if (index <= 0) {
+            this.pop_front();
+            return;
+        }
+
+        if (index >= this.length) {
+            this.pop_back();
+            return;
+        }
+
+        Node temp = this.head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+        this.length--;
+    }
+
+    public int size() {
+        return this.length;
+    }
+
     public void print_list() {
         Node temp = this.head;
 
@@ -92,10 +136,3 @@ public class SLIST {
         System.out.print("null");
     }
 }
-/*
- * void insert_at(int, int);
- * void remove_at(int);
- * 
- * int front();
- * int back();
- */
