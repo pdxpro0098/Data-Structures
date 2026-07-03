@@ -37,16 +37,6 @@ public class SLIST {
         this.length++;
     }
 
-    public void print_list() {
-        Node temp = this.head;
-
-        while (temp != null) {
-            System.out.print(temp.data + "->");
-            temp = temp.next;
-        }
-        System.out.print("null");
-    }
-
     public void push_back(int data) {
         Node newNode = new Node(data);
 
@@ -65,10 +55,44 @@ public class SLIST {
         return this.length;
     }
 
+    public void pop_front() {
+        if (this.head == null) {
+            return;
+        }
+
+        this.head = this.head.next;
+        this.length--;
+    }
+
+    public void pop_back() {
+        if (this.head == null) {
+            return;
+        }
+
+        if (this.head.next == null) {
+            this.head = null;
+        } else {
+
+            Node temp = this.head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+        this.length--;
+    }
+
+    public void print_list() {
+        Node temp = this.head;
+
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.print("null");
+    }
 }
 /*
- * void pop_front();
- * void pop_back();
  * void insert_at(int, int);
  * void remove_at(int);
  * 
