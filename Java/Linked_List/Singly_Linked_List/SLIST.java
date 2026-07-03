@@ -1,7 +1,5 @@
 package Java.Linked_List.Singly_Linked_List;
 
-import org.w3c.dom.Node;
-
 public class SLIST {
 
     private int length;
