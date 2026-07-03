@@ -1,0 +1,61 @@
+package Java.Linked_List.Singly_Linked_List;
+
+public class SLIST {
+
+    private int length;
+    private Node head;
+
+    private class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    SLIST() {
+        this.head = null;
+        this.length = 0;
+    }
+
+    SLIST(int data) {
+        this.head = new Node(data);
+        this.length = 0;
+    }
+
+    public void push_front(int data) {
+        Node newNode = new Node(data);
+        if (this.head == null) {
+            head = newNode;
+        } else {
+            newNode.next = this.head;
+            head = newNode;
+        }
+        this.length++;
+    }
+
+    public void print_list() {
+        Node temp = this.head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.print("null");
+    }
+
+}
+/*
+ * void push_back(int);
+ * void pop_front();
+ * void pop_back();
+ * void insert_at(int, int);
+ * void remove_at(int);
+ * 
+ * int front();
+ * int back();
+ * int size();
+ * int is_empty();
+ * 
+ */
