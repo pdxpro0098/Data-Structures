@@ -25,7 +25,7 @@ public class SLIST {
         this.length = 0;
     }
 
-    public void push_front(int data) {
+    void push_front(int data) {
         Node newNode = new Node(data);
 
         if (this.head == null) {
@@ -37,7 +37,7 @@ public class SLIST {
         this.length++;
     }
 
-    public void push_back(int data) {
+    void push_back(int data) {
         Node newNode = new Node(data);
 
         if (this.head == null) {
@@ -51,7 +51,7 @@ public class SLIST {
         this.length++;
     }
 
-    public void pop_front() {
+    void pop_front() {
         if (this.head == null) {
             return;
         }
@@ -60,7 +60,7 @@ public class SLIST {
         this.length--;
     }
 
-    public void pop_back() {
+    void pop_back() {
         if (this.head == null) {
             return;
         }
@@ -78,7 +78,7 @@ public class SLIST {
         this.length--;
     }
 
-    public void insert_at(int data, int index) {
+    void insert_at(int data, int index) {
         if (index <= 0) {
             this.push_front(data);
             return;
@@ -100,7 +100,7 @@ public class SLIST {
         this.length++;
     }
 
-    public void remove_at(int index) {
+    void remove_at(int index) {
         if (index <= 0) {
             this.pop_front();
             return;
@@ -120,11 +120,11 @@ public class SLIST {
         this.length--;
     }
 
-    public int size() {
+    int size() {
         return this.length;
     }
 
-    public void print_list() {
+    void print_list() {
         Node temp = this.head;
 
         while (temp != null) {
