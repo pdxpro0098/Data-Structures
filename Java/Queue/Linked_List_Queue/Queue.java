@@ -1,3 +1,5 @@
+package Java.Queue.Linked_List_Queue;
+
 public class Queue {
     private Node front;
     private Node rear;
