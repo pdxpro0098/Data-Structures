@@ -15,7 +15,7 @@ public class BST {
     }
 
     private Node root;
-    private int _size;
+    private int size;
 
     BST(int value) {
         this.root = new Node(value);
@@ -26,7 +26,7 @@ public class BST {
 
         if (this.root != null) {
             this.root = newNode;
-            this._size++;
+            this.size++;
             return;
         }
 
@@ -49,7 +49,7 @@ public class BST {
         } else {
             prev.right = newNode;
         }
-        this._size++;
+        this.size++;
     }
 
     private Node getSuccessor(Node root) {
@@ -93,20 +93,44 @@ public class BST {
 
         if (search(value)) {
             this.root = removeChild(this.root, value);
-            this._size--;
+            this.size--;
         }
     }
 
-    void preOrder() {
-
+    private void preOrder(Node root) {
+        if (root != null) {
+            System.out.println(root.data + " ");
+            preOrder(root.left);
+            preOrder(root.right);
+        }
     }
 
-    void inOrder() {
-
+    public void preOrder() {
+        preOrder(this.root);
     }
 
-    void postOrder() {
+    private void inOrder(Node root) {
+        if (root != null) {
+            inOrder(root.left);
+            System.out.println(root.data + " ");
+            inOrder(root.right);
+        }
+    }
 
+    public void inOrder() {
+        inOrder(this.root);
+    }
+
+    private void postOrder(Node root) {
+        if (root != null) {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.println(root.data + " ");
+        }
+    }
+
+    public void postOrder() {
+        postOrder(this.root);
     }
 
     boolean search(int value) {
@@ -123,13 +147,13 @@ public class BST {
 
         return 1;
     }
+
 }
 /*
  * 
- * Node _removeChild(Node , int);
- * void _preOrder(Node );
- * void _inOrder(Node );
- * void _postOrder(Node );
- * Node _search(Node , int);
- * int _height(Node );
+ * Node removeChild(Node , int);
+ * 
+ * Node search(Node , int);
+ * 
+ * int height(Node );
  */
