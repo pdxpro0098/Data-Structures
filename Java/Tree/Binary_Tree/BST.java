@@ -139,21 +139,25 @@ public class BST {
     }
 
     int size() {
-
-        return 1;
+        return this.size;
     }
 
-    int height() {
+    private int max(int leftH, int rightH) {
 
-        return 1;
+        if (leftH > rightH)
+            return leftH;
+        return rightH;
     }
 
+    private int _height(Node root) {
+        if (this.root == null)
+            return 0;
+
+        return 1 + max(_height(root.left), _height(root.right));
+    }
+
+    public int height() {
+
+        return _height(this.root);
+    }
 }
-/*
- * 
- * Node removeChild(Node , int);
- * 
- * Node search(Node , int);
- * 
- * int height(Node );
- */
