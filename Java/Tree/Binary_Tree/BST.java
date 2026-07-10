@@ -133,9 +133,18 @@ public class BST {
         postOrder(this.root);
     }
 
-    boolean search(int value) {
+    Node _search(Node root, int key) {
+        if (root == null || root.data == key) {
+            return root;
+        } else if (root.data > key) {
+            return _search(root.left, key);
+        } else {
+            return _search(root.right, key);
+        }
+    }
 
-        return true;
+    boolean search(int key) {
+        return _search(this.root, key) != null;
     }
 
     int size() {
