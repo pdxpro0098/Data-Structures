@@ -96,7 +96,7 @@ public class BinaryTree {
         this._size--;
     }
 
-    void _preOrder(Node root) {
+    private void _preOrder(Node root) {
         if (root != null) {
             System.out.println(root.data + " ");
             _preOrder(root.left);
@@ -104,7 +104,7 @@ public class BinaryTree {
         }
     }
 
-    void _inOrder(Node root) {
+    private void _inOrder(Node root) {
         if (root != null) {
             _inOrder(root.left);
             System.out.println(root.data + " ");
@@ -112,7 +112,7 @@ public class BinaryTree {
         }
     }
 
-    void _postOrder(Node root) {
+    private void _postOrder(Node root) {
         if (root != null) {
             _postOrder(root.left);
             _postOrder(root.right);
@@ -120,19 +120,19 @@ public class BinaryTree {
         }
     }
 
-    void preOrder() {
+    public void preOrder() {
         _preOrder(this.root);
     }
 
-    void inOrder() {
+    public void inOrder() {
         _inOrder(this.root);
     }
 
-    void postOrder() {
+    public void postOrder() {
         _postOrder(this.root);
     }
 
-    Node _search(Node root, int key) {
+    private Node _search(Node root, int key) {
         if (root == null) {
             return null;
         }
@@ -150,11 +150,11 @@ public class BinaryTree {
         return _search(root.right, key);
     }
 
-    boolean search(int key) {
+    public boolean search(int key) {
         return _search(this.root, key) != null;
     }
 
-    int size() {
+    public int size() {
         return this._size;
     }
 
@@ -165,7 +165,7 @@ public class BinaryTree {
         return rightH;
     }
 
-    int _height(Node root) {
+    private int _height(Node root) {
         if (root == null)
             return 0;
 
@@ -173,7 +173,7 @@ public class BinaryTree {
     }
 
     public int height() {
-        return 1;
+        return _height(root);
     }
 
 }
