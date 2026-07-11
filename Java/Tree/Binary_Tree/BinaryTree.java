@@ -132,12 +132,44 @@ public class BinaryTree {
         _postOrder(this.root);
     }
 
-    public boolean search() {
-        return true;
+    Node _search(Node root, int key) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.data == key) {
+            return root;
+        }
+
+        Node temp = _search(root.left, key);
+
+        if (temp != null) {
+            return temp;
+        }
+
+        return _search(root.right, key);
     }
 
-    public int size() {
-        return 1;
+    boolean search(int key) {
+        return _search(this.root, key) != null;
+    }
+
+    int size() {
+        return this._size;
+    }
+
+    private int max(int leftH, int rightH) {
+
+        if (leftH > rightH)
+            return leftH;
+        return rightH;
+    }
+
+    int _height(Node root) {
+        if (root == null)
+            return 0;
+
+        return 1 + max(_height(root.left), _height(root.right));
     }
 
     public int height() {
