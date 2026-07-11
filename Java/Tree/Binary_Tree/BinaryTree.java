@@ -96,16 +96,40 @@ public class BinaryTree {
         this._size--;
     }
 
-    public void preOrder() {
-
+    void _preOrder(Node root) {
+        if (root != null) {
+            System.out.println(root.data + " ");
+            _preOrder(root.left);
+            _preOrder(root.right);
+        }
     }
 
-    public void inOrder() {
-
+    void _inOrder(Node root) {
+        if (root != null) {
+            _inOrder(root.left);
+            System.out.println(root.data + " ");
+            _inOrder(root.right);
+        }
     }
 
-    public void postOrder() {
+    void _postOrder(Node root) {
+        if (root != null) {
+            _postOrder(root.left);
+            _postOrder(root.right);
+            System.out.println(root.data + " ");
+        }
+    }
 
+    void preOrder() {
+        _preOrder(this.root);
+    }
+
+    void inOrder() {
+        _inOrder(this.root);
+    }
+
+    void postOrder() {
+        _postOrder(this.root);
     }
 
     public boolean search() {
