@@ -55,12 +55,45 @@ public class BinaryTree {
         this._size++;
     }
 
-    public void removeChild(int value) {
-
-    }
-
     public void removeChild() {
+        if (this.root == null) {
+            return;
+        }
 
+        if (this.root.left == null && this.root.right == null) {
+            this.root = null;
+            this._size--;
+            return;
+        }
+
+        Queue<Node> que = new LinkedList<>();
+        que.add(this.root);
+
+        Node toDelete = null;
+        Node parent = null;
+
+        while (!que.isEmpty()) {
+            toDelete = que.peek();
+            que.poll();
+
+            if (toDelete.left != null) {
+                parent = toDelete;
+                que.add(toDelete.left);
+            }
+
+            if (toDelete.right != null) {
+                parent = toDelete;
+                que.add(toDelete.right);
+            }
+        }
+
+        if (parent.right == toDelete) {
+            parent.right = null;
+        } else {
+            parent.left = null;
+        }
+
+        this._size--;
     }
 
     public void preOrder() {
