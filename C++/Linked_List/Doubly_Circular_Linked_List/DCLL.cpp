@@ -186,7 +186,7 @@ int DCLIST::is_empty()
     return this->length == 0;
 }
 
-void printForward(DCLIST list)
+void printForword(DCLIST list)
 {
     DCLIST::Node *temp = list.head;
     for (int i = 1; i <= list.length; i++)
@@ -196,7 +196,7 @@ void printForward(DCLIST list)
     }
 }
 
-void printBackward(DCLIST list)
+void printBackword(DCLIST list)
 {
     DCLIST::Node *temp = list.tail;
     for (int i = list.length; i > 0; i--)
