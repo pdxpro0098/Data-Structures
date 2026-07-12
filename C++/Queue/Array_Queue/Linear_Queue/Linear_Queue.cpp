@@ -72,5 +72,5 @@ bool QUEUE::isEmpty()
 
 bool QUEUE::isFull()
 {
-    return capacity == rear - 1;
+    return capacity == length - 1;
 }

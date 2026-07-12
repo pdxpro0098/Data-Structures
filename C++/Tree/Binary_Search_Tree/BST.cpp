@@ -200,11 +200,6 @@ int BST::size()
     return this->_size;
 }
 
-int BST::height()
-{
-    return 0;
-}
-
 int BST::_height(Node *root)
 {
     if (!root)
