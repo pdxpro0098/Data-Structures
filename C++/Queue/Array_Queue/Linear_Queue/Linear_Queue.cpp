@@ -74,8 +74,3 @@ bool QUEUE::isFull()
 {
     return capacity == rear - 1;
 }
-
-QUEUE::~QUEUE()
-{
-    delete[] array;
-}

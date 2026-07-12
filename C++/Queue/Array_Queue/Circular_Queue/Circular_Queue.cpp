@@ -103,8 +103,3 @@ void QUEUE::resize()
     front = 0;
     rear = length - 1;
 }
-
-QUEUE::~QUEUE()
-{
-    delete[] array;
-}
