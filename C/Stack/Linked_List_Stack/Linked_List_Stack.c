@@ -11,6 +11,14 @@ int STACK_Size(STACK *stack)
     return stack->size;
 }
 
+Node *createNode(int value)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->data = value;
+    return newNode;
+}
+
 void push(STACK *stack, int value)
 {
     Node *newNode = createNode(value);

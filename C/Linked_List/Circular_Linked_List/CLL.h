@@ -14,6 +14,7 @@ typedef struct CList
 
 void CList_init(CList *list);
 int CList_size(CList *list);
+Node *createNode(int value);
 void insertHead(CList *list, int value);
 void deleteHead(CList *list);
 void insertTail(CList *list, int value);

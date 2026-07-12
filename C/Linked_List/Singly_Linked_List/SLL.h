@@ -14,6 +14,7 @@ typedef struct List
 
 void List_init(List *list);
 int List_size(List *list);
+Node *createNode(int value);
 void insertHead(List *list, int value);
 void deleteHead(List *list);
 void insertTail(List *list, int value);

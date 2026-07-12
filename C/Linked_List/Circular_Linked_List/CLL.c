@@ -7,6 +7,14 @@ void CList_init(CList *list)
     list->size = 0;
 }
 
+Node *createNode(int value)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->data = value;
+    return newNode;
+}
+
 int CList_size(CList *list)
 {
     return list->size;

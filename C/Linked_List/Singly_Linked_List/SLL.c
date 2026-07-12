@@ -7,6 +7,14 @@ void List_init(List *list)
     list->head = NULL;
 }
 
+Node *createNode(int value)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->data = value;
+    return newNode;
+}
+
 int List_size(List *list)
 {
     return list->size;
