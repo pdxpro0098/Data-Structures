@@ -4,6 +4,8 @@
 #define ARRAY_LENGTH(x) (sizeof(x) / sizeof((x)[0]))
 #define IS_EVEN(x) x % 2 == 0
 #define IS_ODD(x) x % 2 == 1
+#define MAX(a, b) (a > b) ? a : b
+#define MIN(a, b) (a < b) ? a : b
 
 void swap(int *a, int *b)
 {
@@ -29,28 +31,4 @@ int isPrime(int n)
     }
 
     return 1;
-}
-
-int MAX(int a, int b)
-{
-    if (a > b)
-    {
-        return a;
-    }
-    else
-    {
-        return b;
-    }
-}
-
-int MIN(int a, int b)
-{
-    if (a < b)
-    {
-        return a;
-    }
-    else
-    {
-        return b;
-    }
 }
