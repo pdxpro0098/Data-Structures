@@ -106,3 +106,12 @@ void printGraph(GRAPH *g)
     }
 }
 
+int edgesCount(GRAPH *g)
+{
+    return g->edges;
+}
+
+int vertexCount(GRAPH *g)
+{
+    g->vertices;
+}
