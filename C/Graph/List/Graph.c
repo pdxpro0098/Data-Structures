@@ -30,7 +30,7 @@ void printHeadList(GRAPH *graph)
     }
 }
 
-void addEdge(GRAPH *g, char src, char dest)
+void __addEdge(GRAPH *g, char src, char dest)
 {
     VERTEX *newVertex = createVertex(dest);
     VERTEX *temp = NULL;
@@ -62,6 +62,12 @@ void addEdge(GRAPH *g, char src, char dest)
     g->edges++;
 }
 
+void addEdge(GRAPH *g, char src, char dest)
+{
+    __addEdge(g, src, dest);
+    __addEdge(g, dest, src);
+}
+
 void printEdges(GRAPH *g, char vertex)
 {
     VERTEX *temp = NULL;
@@ -91,3 +97,12 @@ void printEdges(GRAPH *g, char vertex)
         return;
     }
 }
+
+void printGraph(GRAPH *g)
+{
+    for (int i = 0; i < g->vertices; i++)
+    {
+        printEdges(g, g->heads[i].name);
+    }
+}
+
