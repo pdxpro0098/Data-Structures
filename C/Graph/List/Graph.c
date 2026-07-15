@@ -1,6 +1,6 @@
 #include "Graph.h"
 
-void GRAPH_init(GRAPH *graph, char vertices[], int vertexCount)
+void GRAPH_init(GRAPH *graph, char *vertices, int vertexCount)
 {
     graph->vertices = vertexCount;
     graph->edges = 0;
@@ -24,7 +24,6 @@ void GRAPH_printHeadList(GRAPH *graph)
     VERTEX *temp = graph->heads;
     for (int i = 0; i < graph->vertices; i++)
     {
-        printf("%c\n", temp->name);
-        temp = temp->next;
+        printf("%c\n", temp[i].name);
     }
 }
