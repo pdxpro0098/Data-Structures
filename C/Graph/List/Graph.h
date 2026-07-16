@@ -16,7 +16,8 @@ typedef struct GRAPH
 
 VERTEX *createVertex(char name);
 void GRAPH_init(GRAPH *graph, char *vertices, int vertexCount);
-void addEdge(GRAPH *g, char src, char dest);
+void addEdgeUnDirected(GRAPH *g, char src, char dest);
+void addEdgeDirected(GRAPH *g, char src, char dest);
 void __addEdge(GRAPH *g, char src, char dest);
 void printHeadList(GRAPH *graph);
 void printEdges(GRAPH *g, char vertex);

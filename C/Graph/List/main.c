@@ -6,18 +6,18 @@ int main()
     char arr[5] = {'A', 'B', 'C', 'D', 'E'};
     GRAPH_init(g, arr, 5);
 
-    addEdge(g, 'A', 'B');
-    addEdge(g, 'A', 'C');
-    addEdge(g, 'A', 'D');
-    addEdge(g, 'A', 'E');
+    addEdgeUnDirected(g, 'A', 'B');
+    addEdgeUnDirected(g, 'A', 'C');
+    addEdgeUnDirected(g, 'A', 'D');
+    addEdgeUnDirected(g, 'A', 'E');
 
-    addEdge(g, 'B', 'C');
-    addEdge(g, 'B', 'E');
+    addEdgeUnDirected(g, 'B', 'C');
+    addEdgeUnDirected(g, 'B', 'E');
 
-    addEdge(g, 'C', 'D');
+    addEdgeUnDirected(g, 'C', 'D');
 
-    addEdge(g, 'D', 'E');
-    addEdge(g, 'D', 'D');
+    addEdgeUnDirected(g, 'D', 'E');
+    addEdgeUnDirected(g, 'D', 'D');
 
     printGraph(g);
     return 0;

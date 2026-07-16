@@ -32,6 +32,11 @@ void printHeadList(GRAPH *graph)
 
 void __addEdge(GRAPH *g, char src, char dest)
 {
+    if (src == dest)
+    {
+        return;
+    }
+
     VERTEX *newVertex = createVertex(dest);
     VERTEX *temp = NULL;
 
@@ -62,10 +67,15 @@ void __addEdge(GRAPH *g, char src, char dest)
     g->edges++;
 }
 
-void addEdge(GRAPH *g, char src, char dest)
+void addEdgeDirected(GRAPH *g, char src, char dest)
 {
     __addEdge(g, src, dest);
     __addEdge(g, dest, src);
+}
+
+void addEdgeUnDirected(GRAPH *g, char src, char dest)
+{
+    __addEdge(g, src, dest);
 }
 
 void printEdges(GRAPH *g, char vertex)
