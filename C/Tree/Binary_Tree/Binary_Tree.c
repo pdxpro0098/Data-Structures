@@ -50,7 +50,7 @@ void freeQueue(Queue *queue)
 
 /*Binary Tree Function */
 
-void initBTREE(BTREE *root)
+void initTREE(TREE *root)
 {
     root->size = 0;
     root->root = NULL;
@@ -65,7 +65,7 @@ Node *createNode(int value)
     return newNode;
 }
 
-void insert(BTREE *tree, int data)
+void insert(TREE *tree, int data)
 {
     Node *newNode = createNode(data);
 
@@ -110,7 +110,7 @@ void insert(BTREE *tree, int data)
     freeQueue(queue);
 }
 
-void delete(BTREE *tree)
+void delete(TREE *tree)
 {
     if (tree == NULL || tree->root == NULL)
         return;
@@ -164,7 +164,7 @@ void delete(BTREE *tree)
     freeQueue(queue);
 }
 
-Node *SEARCH(Node *root, int key)
+Node *__search(Node *root, int key)
 {
     if (root == NULL)
     {
@@ -176,92 +176,92 @@ Node *SEARCH(Node *root, int key)
         return temp;
     }
 
-    Node *leftRes = SEARCH(root->left, key);
+    Node *leftRes = __search(root->left, key);
     if (leftRes != NULL)
     {
         return leftRes;
     }
 
-    return SEARCH(root->right, key);
+    return __search(root->right, key);
 }
 
-Node *search(BTREE *tree, int key)
+Node *search(TREE *tree, int key)
 {
-    return SEARCH(tree->root, key);
+    return __search(tree->root, key);
 }
 
-void PREORDER(Node *root)
+void __preOrder(Node *root)
 {
     if (root == NULL)
         return;
     printf("%d ", root->data);
-    PREORDER(root->left);
-    PREORDER(root->right);
+    __preOrder(root->left);
+    __preOrder(root->right);
 }
 
-void preOrder(BTREE *tree)
+void preOrder(TREE *tree)
 {
     if (tree != NULL && tree->root != NULL)
     {
-        PREORDER(tree->root);
+        __preOrder(tree->root);
         printf("\n");
     }
 }
 
-void INORDER(Node *root)
+void __inOrder(Node *root)
 {
     if (root == NULL)
         return;
-    INORDER(root->left);
+    __inOrder(root->left);
     printf("%d ", root->data);
-    INORDER(root->right);
+    __inOrder(root->right);
 }
 
-void inOrder(BTREE *tree)
+void inOrder(TREE *tree)
 {
     if (tree != NULL && tree->root != NULL)
     {
-        INORDER(tree->root);
+        __inOrder(tree->root);
         printf("\n");
     }
 }
 
-void POSTORDER(Node *root)
+void __postOrder(Node *root)
 {
     if (root == NULL)
         return;
-    POSTORDER(root->left);
-    POSTORDER(root->right);
+    __postOrder(root->left);
+    __postOrder(root->right);
     printf("%d ", root->data);
 }
 
-void postOrder(BTREE *tree)
+void postOrder(TREE *tree)
 {
     if (tree != NULL && tree->root != NULL)
     {
-        POSTORDER(tree->root);
+        __postOrder(tree->root);
         printf("\n");
     }
 }
 
-int HEIGHT(Node *root)
+int __height(Node *root)
 {
     if (root == NULL)
     {
         return 0;
     }
 
-    int leftHeight = HEIGHT(root->left);
-    int rightHeight = HEIGHT(root->right);
+    int leftHeight = __height(root->left);
+    int rightHeight = __height(root->right);
     return MAX(leftHeight, rightHeight) + 1;
 }
 
-int BTREE_Height(BTREE *tree)
+int TREE_Height(TREE *tree)
 {
-    return HEIGHT(tree->root);
+    return __height(tree->root);
 }
 
-int BTREE_Size(BTREE *tree)
+int TREE_Size(TREE *tree)
 {
     return tree->size;
 }

@@ -24,19 +24,24 @@ Node *dequeue(Queue *queue);
 int isEmpty(Queue *queue);
 void freeQueue(Queue *queue);
 
-typedef struct BTREE
+typedef struct TREE
 {
     Node *root;
     int size;
-} BTREE;
+} TREE;
 
-void initBTREE(BTREE *tree);
+void initTREE(TREE *tree);
 Node *createNode(int value);
-void insert(BTREE *tree, int data);
-void delete (BTREE *tree);
-Node *search(BTREE *tree, int key);
-void preOrder(BTREE *tree);
-void inOrder(BTREE *tree);
-void postOrder(BTREE *tree);
-int BTREE_Height(BTREE *tree);
-int BTREE_Size(BTREE *tree);
+void insert(TREE *tree, int data);
+void delete (TREE *tree);
+Node *__search(Node *root, int key);
+Node *search(TREE *tree, int key);
+void __preOrder(Node *root);
+void __inOrder(Node *root);
+void __postOrder(Node *root);
+void preOrder(TREE *tree);
+void inOrder(TREE *tree);
+void postOrder(TREE *tree);
+int __height(Node *root);
+int TREE_Height(TREE *tree);
+int TREE_Size(TREE *tree);
