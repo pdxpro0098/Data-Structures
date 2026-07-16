@@ -1,6 +1,6 @@
 # Data Structures
 
-Implementations of common data structures in C and C++. Each folder contains a
+Implementations of various data structures in C, C++, Java etc. Each folder contains a
 small, standalone example with its implementation, header, and `main` file.
 
 ## Included
@@ -11,8 +11,6 @@ small, standalone example with its implementation, header, and `main` file.
 - Linear, circular, double-ended, and linked-list queues (where available)
 - General trees, binary trees, and binary search trees
 
-The `TODO.md` file tracks planned structures such as graphs, heaps, hash maps,
-and self-balancing trees.
 
 ## Build and run
 
@@ -21,16 +19,14 @@ files are used:
 
 ```text
 cd C++\Stack\Array_Stack
-g++ *.cpp -o main.exe
-main.exe
+./Compile_run.bat
 ```
 
 For C examples, use a C compiler from the relevant directory:
 
 ```text
 cd C\Array
-gcc *.c -o main.exe
-main.exe
+./Compile_run.bat
 ```
 
 `Compile_run.bat` contains the C++ build-and-run command and can be copied into
