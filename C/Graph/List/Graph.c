@@ -37,7 +37,6 @@ void __addEdge(GRAPH *g, char src, char dest)
         return;
     }
 
-    VERTEX *newVertex = createVertex(dest);
     VERTEX *temp = NULL;
 
     for (int i = 0; i < g->vertices; i++)
@@ -63,6 +62,8 @@ void __addEdge(GRAPH *g, char src, char dest)
         }
     }
 
+    VERTEX *newVertex = createVertex(dest);
+
     temp->next = newVertex;
     g->edges++;
 }
@@ -70,12 +71,12 @@ void __addEdge(GRAPH *g, char src, char dest)
 void addEdgeDirected(GRAPH *g, char src, char dest)
 {
     __addEdge(g, src, dest);
-    __addEdge(g, dest, src);
 }
 
 void addEdgeUnDirected(GRAPH *g, char src, char dest)
 {
     __addEdge(g, src, dest);
+    __addEdge(g, dest, src);
 }
 
 void printEdges(GRAPH *g, char vertex)
@@ -118,7 +119,6 @@ void printGraph(GRAPH *g)
 
 void BFS(GRAPH *g)
 {
-
 }
 
 void DFS(GRAPH *g)
@@ -132,5 +132,5 @@ int edgesCount(GRAPH *g)
 
 int vertexCount(GRAPH *g)
 {
-    g->vertices;
+    return g->vertices;
 }
