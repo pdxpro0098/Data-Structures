@@ -1,5 +1,4 @@
 #include "BST.h"
-#include "..\..\Utility.h"
 
 void initBST(BST *tree)
 {
