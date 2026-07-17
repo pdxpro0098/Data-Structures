@@ -15,23 +15,33 @@ void GRAPH_init(GRAPH *g, int vertexCount)
 void __addEdge(GRAPH *g, int src, int dest)
 {
     g->graph[src][dest] = 1;
-    g->graph[dest][src] = 1;
 }
 
 void addEdgeUnDirected(GRAPH *g, int src, int dest)
 {
+    __addEdge(g, src, dest);
 }
 
 void addEdgeDirected(GRAPH *g, int src, int dest)
 {
+    __addEdge(g, src, dest);
+    __addEdge(g, dest, src);
 }
 
-void printHeadList(GRAPH *graph)
+void printHeadList(GRAPH *g)
 {
+    for (int i = 0; i < g->vertices; i++)
+    {
+        printf("%d ", i);
+    }
 }
 
 void printEdges(GRAPH *g, int vertex)
 {
+    for (int i = 0; i < g->vertices; i++)
+    {
+        printf("%d ", g->graph[vertex][i]);
+    }
 }
 
 void printGraph(GRAPH *g)
