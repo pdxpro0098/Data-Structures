@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX(a, b) (a > b) ? a : b;
 
 typedef struct Node
 {
@@ -17,7 +18,7 @@ typedef struct BST
 void initBST(BST *tree);
 Node *createNode(int value);
 void insert(BST *tree, int data);
-void delete(BST *tree, int key);
+void delete (BST *tree, int key);
 Node *search(BST *tree, int key);
 void preOrder(BST *tree);
 void inOrder(BST *tree);
