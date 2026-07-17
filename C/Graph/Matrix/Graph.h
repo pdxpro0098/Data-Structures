@@ -4,7 +4,7 @@
 typedef struct GRAPH
 {
     int edges;
-    int vertex;
+    int vertices;
     int **graph;
 } GRAPH;
 

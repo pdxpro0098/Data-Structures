@@ -1,27 +1,21 @@
 #include "Graph.h"
 
-void GRAPH_init(GRAPH *graph, int vertexCount)
+void GRAPH_init(GRAPH *g, int vertexCount)
 {
-    graph->edges = 0;
-    graph->vertex = vertexCount;
+    g->edges = 0;
+    g->vertices = vertexCount;
 
-    graph->graph = (int **)malloc(sizeof(int *) * vertexCount);
+    g->graph = (int **)calloc(vertexCount, sizeof(int *));
     for (int i = 0; i < vertexCount; i++)
     {
-        graph->graph[i] = (int *)malloc(sizeof(int) * vertexCount);
-    }
-
-    for (int i = 0; i < vertexCount; i++)
-    {
-        for (int j = 0; j < vertexCount; j++)
-        {
-            graph->graph[i][j] = 99;
-        }
+        g->graph[i] = (int *)calloc(vertexCount, sizeof(int));
     }
 }
 
 void __addEdge(GRAPH *g, int src, int dest)
 {
+    g->graph[src][dest] = 1;
+    g->graph[dest][src] = 1;
 }
 
 void addEdgeUnDirected(GRAPH *g, int src, int dest)
@@ -42,6 +36,14 @@ void printEdges(GRAPH *g, int vertex)
 
 void printGraph(GRAPH *g)
 {
+    for (int i = 0; i < g->vertices; i++)
+    {
+        for (int j = 0; j < g->vertices; j++)
+        {
+            printf("%d ", g->graph[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 void BFS(GRAPH *g)
@@ -59,5 +61,5 @@ int edgesCount(GRAPH *g)
 
 int vertexCount(GRAPH *g)
 {
-    return g->vertex;
+    return g->vertices;
 }
