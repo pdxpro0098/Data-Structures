@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "..\..\Utility.h"
+#define MAX(a, b) (a > b) ? a : b;
 
 typedef struct Node
 {
@@ -36,6 +36,7 @@ void insert(TREE *tree, int data);
 void delete (TREE *tree);
 Node *__search(Node *root, int key);
 Node *search(TREE *tree, int key);
+void levelOrder(TREE *tree);
 void __preOrder(Node *root);
 void __inOrder(Node *root);
 void __postOrder(Node *root);

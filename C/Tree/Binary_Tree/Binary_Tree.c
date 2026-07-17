@@ -190,6 +190,29 @@ Node *search(TREE *tree, int key)
     return __search(tree->root, key);
 }
 
+void levelOrder(TREE *tree)
+{
+    printf("level order\n");
+    Queue *que = (Queue *)malloc(sizeof(Queue));
+    initQueue(que);
+
+    enqueue(que, tree->root);
+    while (!isEmpty(que))
+    {
+        Node *temp = dequeue(que);
+        printf("%d ", temp->data);
+        if (temp->left != NULL)
+        {
+            enqueue(que, temp->left);
+        }
+
+        if (temp->right != NULL)
+        {
+            enqueue(que, temp->right);
+        }
+    }
+}
+
 void __preOrder(Node *root)
 {
     if (root == NULL)
