@@ -117,14 +117,6 @@ void printGraph(GRAPH *g)
     }
 }
 
-void BFS(GRAPH *g)
-{
-}
-
-void DFS(GRAPH *g)
-{
-}
-
 int edgesCount(GRAPH *g)
 {
     return g->edges;
