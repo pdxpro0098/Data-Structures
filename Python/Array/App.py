@@ -1,0 +1,3 @@
+import Array
+
+a = Array()

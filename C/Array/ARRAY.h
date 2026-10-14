@@ -1,7 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
-
-// #include "../UTILITY.c"
+#include <stdlib.h>
 
 typedef struct
 {
@@ -10,7 +8,6 @@ typedef struct
     int length;
 } ARRAY;
 
-// Prototypes from ARRAY.c
 void ARRAY_init(ARRAY *array);
 int ARRAY_Size(ARRAY *array);
 void insert_back(ARRAY *array, int value);
@@ -22,10 +19,11 @@ int delete_At(ARRAY *array, int index);
 void ARRAY_empty(ARRAY *array);
 void ARRAY_free(ARRAY *array);
 
-// Prototypes from ARRAY_FUNCTIONS.c
 void ARRAY_Print(ARRAY *array);
 void ARRAY_Reverse(ARRAY *array);
 void ARRAY_SortASC(ARRAY *array);
 void ARRAY_SortDES(ARRAY *array);
 int ARRAY_Maximum(ARRAY *array);
 int ARRAY_Minimum(ARRAY *array);
+int ARRAY_Sum(ARRAY *array);
+int ARRAY_Product(ARRAY *array);
