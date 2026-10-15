@@ -7,7 +7,7 @@ public class Tree {
         int data;
 
     }
-
+    
     Tree() {
         Node root;
     }
