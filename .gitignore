@@ -2,4 +2,5 @@
 *.class
 temp.*
 .vscode/
+.zed/
 *Compile_run.batw
